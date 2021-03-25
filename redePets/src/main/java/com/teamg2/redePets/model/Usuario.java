@@ -15,8 +15,8 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_tema")
-public class Tema {
+@Table(name = "tb_usuario")
+public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,17 +24,18 @@ public class Tema {
 	
 	@NotNull
 	@Size(min = 1, max = 100)
-	private String nome;
+	private String nome_completo;
 	
 	@NotNull
-	@Size(min = 1, max = 500)
-	private String descricao;
+	@Size(min = 1, max = 100)
+	private String email;
 	
 	@NotNull
-	private long relevancia;
+	@Size(min = 1, max = 100)
+	private String senha;
 	
-	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("tema")
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 
 	public long getId() {
@@ -45,28 +46,28 @@ public class Tema {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNome_completo() {
+		return nome_completo;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNome_completo(String nome_completo) {
+		this.nome_completo = nome_completo;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public long getRelevancia() {
-		return relevancia;
+	public String getSenha() {
+		return senha;
 	}
 
-	public void setRelevancia(long relevancia) {
-		this.relevancia = relevancia;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public List<Postagem> getPostagem() {
