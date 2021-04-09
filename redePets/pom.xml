@@ -12,11 +12,22 @@
 	<artifactId>redePets</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>redePets</name>
-	<description>Projeto integrador da equipe 2 da turma 18 da Generation Brasil</description>
+	<description>Projeto integrador da equipe 2 da turma 18 da Generation Brasil, 
+	cujo tema é uma rede social que conecta pessoas que desejam adotar pets 
+	com pessoas que possuem pets disponíveis para adoção.</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<!-- <version>1.10</version> -->
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
