@@ -2,16 +2,13 @@ package com.teamg2.redePets.security;
 
 import java.util.Collection;
 
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.teamg2.redePets.model.Usuario;
 
-
 public class UserDetailsImpl implements UserDetails
 {
-
 	private static final long serialVersionUID = 1L;
 	
 	private String email;
@@ -19,10 +16,15 @@ public class UserDetailsImpl implements UserDetails
 	
 	public UserDetailsImpl (Usuario user) 
 	{
+		super();
 		this.email = user.getEmail();
 		this.password = user.getSenha(); 
 	}
-	public UserDetailsImpl () {}
+	
+	public UserDetailsImpl () 
+	{
+		
+	}
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
