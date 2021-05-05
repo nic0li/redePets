@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -22,15 +22,13 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
-	@Size(min = 1, max = 100)
+	@NotBlank
+	@Size(max = 100)
 	private String nome;
 	
-	@NotNull
-	@Size(min = 1, max = 500)
+	@Size(max = 500)
 	private String descricao;
 	
-	@NotNull
 	private long relevancia;
 	
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
@@ -76,7 +74,5 @@ public class Tema {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
-	
 
 }

@@ -10,10 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.URL;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -25,23 +23,20 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 		
-	@NotNull
-	@Size(min = 2, max = 100)
+	@NotBlank
+	@Size(max = 100)
 	private String titulo;
 	
-	@NotNull
-	@Size(min = 2, max = 5000)
-	private String conteudo;
-
-	@NotNull
-	private long curtidas;
-	
-	@URL
-	@Size(min = 0, max = 500)
-	private String imagem;
+	@NotBlank
+	@Size(max = 5000)
+	private String texto;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data = new java.sql.Date(System.currentTimeMillis());
+
+	private String imagem;
+	
+	private long curtidas;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
@@ -67,22 +62,22 @@ public class Postagem {
 		this.titulo = titulo;
 	}
 
-	public String getConteudo() {
-		return conteudo;
+	public String getTexto() {
+		return texto;
 	}
 
-	public void setConteudo(String conteudo) {
-		this.conteudo = conteudo;
-	}
-
-	public long getCurtidas() {
-		return curtidas;
-	}
-
-	public void setCurtidas(long curtidas) {
-		this.curtidas = curtidas;
+	public void setTexto(String texto) {
+		this.texto = texto;
 	}
 	
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
 	public String getImagem() {
 		return imagem;
 	}
@@ -91,12 +86,12 @@ public class Postagem {
 		this.imagem = imagem;
 	}
 
-	public Date getData() {
-		return data;
+	public long getCurtidas() {
+		return curtidas;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setCurtidas(long curtidas) {
+		this.curtidas = curtidas;
 	}
 
 	public Tema getTema() {
@@ -114,7 +109,5 @@ public class Postagem {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
-	
 	
 }

@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
 	@Bean
-	public Docket docket(){
+	public Docket docket() {
 		return new Docket(DocumentationType.SWAGGER_2)
 		.select()
 		.apis( RequestHandlerSelectors.basePackage
@@ -26,19 +26,20 @@ public class SwaggerConfig {
 		.apiInfo(apiInfo());
 		}
 	
-	private ApiInfo apiInfo(){
+	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 		.title("Rede Pets")
-		.description("API do Projeto Integrador do grupo 2 da Turma 18 do curso Generation Brasil")
+		.description("API do Projeto Integrador de equipe 2 da turma 18 do curso Generation Brasil")
 		.version("1.0")
 		.contact(contact())
 		.build();
 		}
 		
-	private Contact contact(){
+	private Contact contact() {
 		return new Contact("Diego Alonso, Felipe Lauton, João Vitor de Paula, Karina Souza, Matheus Rufino, Nicoli Fernandes",
 		"https://github.com/nclfrnnds/redePets",
 		"Equipe 2");
 		}
+
 }
 

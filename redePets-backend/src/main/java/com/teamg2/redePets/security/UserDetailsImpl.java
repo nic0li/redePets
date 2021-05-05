@@ -7,22 +7,20 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.teamg2.redePets.model.Usuario;
 
-public class UserDetailsImpl implements UserDetails
-{
+public class UserDetailsImpl implements UserDetails {
+	
 	private static final long serialVersionUID = 1L;
 	
 	private String email;
 	private String password;
 	
-	public UserDetailsImpl (Usuario user) 
-	{
+	public UserDetailsImpl (Usuario user) {
 		super();
 		this.email = user.getEmail();
 		this.password = user.getSenha(); 
 	}
 	
-	public UserDetailsImpl () 
-	{
+	public UserDetailsImpl() {
 		
 	}
 	
@@ -60,6 +58,5 @@ public class UserDetailsImpl implements UserDetails
 	public boolean isEnabled() {
 		return true;
 	}
-
 	
 }

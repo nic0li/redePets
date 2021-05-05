@@ -13,7 +13,7 @@ import com.teamg2.redePets.model.Usuario;
 import com.teamg2.redePets.model.UsuarioLogin;
 import com.teamg2.redePets.repository.UsuarioRepository;
 
-@Service
+@Service         
 public class UsuarioService {
 
 	@Autowired
@@ -47,7 +47,14 @@ public class UsuarioService {
 				String authHeader = "Basic " + new String(encodeAuth);
 				
 				usuarioLogin.get().setToken(authHeader);
-				usuarioLogin.get().setNomeCompleto(usuario.get().getNomeCompleto());
+				usuarioLogin.get().setId(usuario.get().getId());
+				usuarioLogin.get().setNome(usuario.get().getNome());
+				usuarioLogin.get().setFoto(usuario.get().getFoto());
+				usuarioLogin.get().setTipo(usuario.get().getTipo());
+				usuarioLogin.get().setSobre(usuario.get().getSobre());
+				usuarioLogin.get().setTelefone(usuario.get().getTelefone());
+				usuarioLogin.get().setCapa(usuario.get().getCapa());
+				
 				return usuarioLogin;
 				
 			}
