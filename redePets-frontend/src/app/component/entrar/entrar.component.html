@@ -6,22 +6,22 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
                 <h1 class="text-center mb-3">Entrar</h1>
-            
+
             <div class="form-group">
-                <label for="usuario">Usuário</label>
-                <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Digite seu e-mail">
+                <label for="email">E-mail</label>
+                <input [(ngModel)]="usuarioLogin.email" class="form-control" type="text" name="email" id="email" placeholder="Digite seu e-mail">
             </div>
 
             <div class="form-group">
                 <label for="senha">Senha</label>
-                <input class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
+                <input [(ngModel)]="usuarioLogin.senha" class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
             </div>
 
             <div class="d-flex justify-content-center">
-                <button class="btn btn-success" routerLink='/inicio-logado'>Entrar</button>
+                <button class="btn btn-success" (click)="entrar()">Entrar</button>
             </div>
 
-            <hr class="mt-5 mb-5"> 
+            <hr class="mt-5 mb-5">
             <p class="text-center">
                 Não tem uma conta?
                 <br>

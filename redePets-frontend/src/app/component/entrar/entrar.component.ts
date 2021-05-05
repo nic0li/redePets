@@ -17,7 +17,7 @@ export class EntrarComponent implements OnInit {
     private authService: AuthService,
     private router: Router
     ) { }
-  
+
   ngOnInit() {
     window.scroll(0,0);
   }
@@ -30,7 +30,7 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.usuarioLogin.nome;
       environment.foto = this.usuarioLogin.foto;
       environment.id = this.usuarioLogin.id;
-      
+
       this.router.navigate(['/inicio-logado']);
     }, err => {
 

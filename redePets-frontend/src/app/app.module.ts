@@ -10,6 +10,7 @@ import { EntrarComponent } from './component/entrar/entrar.component';
 import { CadastrarComponent } from './component/cadastrar/cadastrar.component';
 import { InicioDeslogadoComponent } from './component/inicio-deslogado/inicio-deslogado.component';
 import { InicioLogadoComponent } from './component/inicio-logado/inicio-logado.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InicioLogadoComponent } from './component/inicio-logado/inicio-logado.c
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [{
     provide: LocationStrategy,

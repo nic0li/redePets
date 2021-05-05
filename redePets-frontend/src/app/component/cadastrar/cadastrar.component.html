@@ -13,30 +13,30 @@
 
                         <div class="fom-group">
                             <label for="nome">Nome</label>
-                            <input class="form-control" type="text" name="nome" id="nome" placeholder="Entre com seu nome">
+                            <input [(ngModel)]="usuario.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Entre com seu nome">
                         </div>
 
                         <div class="fom-group">
                             <label for="email">E-mail</label>
-                            <input class="form-control" type="email" name="email" id="email" placeholder="Entre com seu email">
+                            <input [(ngModel)]="usuario.email" class="form-control" type="email" name="email" id="email" placeholder="Entre com seu email">
                         </div>
 
                         <div class="fom-group">
                             <label for="senha">Senha</label>
-                            <input  class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
+                            <input (input)="confirmarSenha($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
                         </div>
 
                         <div class="fom-group">
                             <label for="confirmeSenha">Confirme Senha</label>
-                            <input class="form-control" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha">
+                            <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha">
                         </div>
-                        
+
                         <div class="d-flex justify-content-center mt-5">
                             <button type="submit" class="btn btn-danger mr-4" routerLink='/entrar'>Cancelar</button>
                             <button type="submit" class="btn btn-info" (click)="cadastrar()">Cadastrar</button>
                         </div>
-            
-        
+
+
 
 
                     </div>

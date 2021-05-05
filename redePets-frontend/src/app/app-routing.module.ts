@@ -12,10 +12,9 @@ const routes: Routes = [
   {path: '', redirectTo: 'inicio-deslogado', pathMatch: 'full'},
   {path: 'entrar', component: EntrarComponent },
   {path: 'cadastrar', component: CadastrarComponent},
-  {path: 'inicio-deslogado', component: InicioDeslogadoComponent},
   {path: 'inicio-logado', component: InicioLogadoComponent},
-  {path: 'menu', component: MenuComponent},
-  {path: 'rodape', component: RodapeComponent}
+  {path: 'inicio-deslogado', component: InicioDeslogadoComponent}
+
 ];
 
 @NgModule({
