@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
-import { RodapeComponent } from './rodape/rodape.component';
-import { EntrarComponent } from './entrar/entrar.component';
-import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { InicioDeslogadoComponent } from './inicio-deslogado/inicio-deslogado.component';
-import { InicioLogadoComponent } from './inicio-logado/inicio-logado.component';
+import { MenuComponent } from './component/menu/menu.component';
+import { RodapeComponent } from './component/rodape/rodape.component';
+import { EntrarComponent } from './component/entrar/entrar.component';
+import { CadastrarComponent } from './component/cadastrar/cadastrar.component';
+import { InicioDeslogadoComponent } from './component/inicio-deslogado/inicio-deslogado.component';
+import { InicioLogadoComponent } from './component/inicio-logado/inicio-logado.component';
 
 @NgModule({
   declarations: [
