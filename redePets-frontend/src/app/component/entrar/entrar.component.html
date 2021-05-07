@@ -15,17 +15,17 @@
 
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input class="form-control" type="email" name="email" id="email" placeholder="Entre com seu email">
+                        <input [(ngModel)]="usuarioLogin.email" class="form-control" type="email" name="email" id="email" placeholder="Entre com seu email">
                     </div>
 
                     <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input class="form-control" type="senha" name="senha" id="senha" placeholder="Entre com sua senha">
+                        <label for="senhar">Senha</label>
+                        <input [(ngModel)]="usuarioLogin.senha" class="form-control" type="password" name="senha" id="senha" placeholder="Entre com sua senha">
                     </div>
 
                     <div class="d-flex justify-content-center mt-5">
-                        <button type="submit" class="btn btn-outline-dark mr-4">Entrar</button>
-                        <button type="submit" class="btn btn-outline-dark">Cancelar</button>
+                        <button type="submit" class="btn btn-outline-dark mr-4" (click)="entrar()">Entrar</button>
+                        <button type="submit" class="btn btn-outline-dark" routerLink='/inicio-deslogado'>Cancelar</button>
                     </div>
                 
                 </div>

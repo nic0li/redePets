@@ -6,11 +6,6 @@
     border-radius: 5px;
 }
 
-html,body {
-    height: 100vh;
+html {
     background-color: #E0C1AD;
-    background-position: fixed;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    overflow-y: scroll;
 }
