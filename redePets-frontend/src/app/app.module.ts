@@ -13,6 +13,7 @@ import { InicioLogadoComponent } from './component/inicio-logado/inicio-logado.c
 import { FormsModule } from '@angular/forms';
 import { TemaComponent } from './component/tema/tema.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { EditComponent } from './component/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
     InicioDeslogadoComponent,
     InicioLogadoComponent,
     TemaComponent,
-    TemaDeleteComponent
+    TemaDeleteComponent,
+    EditComponent
   ],
   imports: [
     HttpClientModule,

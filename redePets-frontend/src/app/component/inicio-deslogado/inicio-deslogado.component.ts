@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-inicio-deslogado',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioDeslogadoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
 
-  ngOnInit(): void {
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+
+    if(environment.token == ''){
+
+      this.router.navigate(['/entrar'])
+    }
   }
 
 }
