@@ -7,6 +7,7 @@ import { InicioLogadoComponent } from './component/inicio-logado/inicio-logado.c
 import { MenuComponent } from './component/menu/menu.component';
 import { RodapeComponent } from './component/rodape/rodape.component';
 import { TemaComponent } from './component/tema/tema.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 
 const routes: Routes = [
 
@@ -15,8 +16,8 @@ const routes: Routes = [
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'inicio-logado', component: InicioLogadoComponent},
   {path: 'inicio-deslogado', component: InicioDeslogadoComponent},
-  {path:'tema',component:TemaComponent}
-
+  {path:'tema',component:TemaComponent},
+  {path:"tema-delete/:id",component:TemaDeleteComponent}
 ];
 
 @NgModule({
