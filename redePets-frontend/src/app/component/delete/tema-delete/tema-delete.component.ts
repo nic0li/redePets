@@ -13,7 +13,6 @@ export class TemaDeleteComponent implements OnInit {
 
   tema: Tema = new Tema()
   idTema:number
-  
 
   constructor(
     private temaService: TemaService,
@@ -21,20 +20,20 @@ export class TemaDeleteComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit()  {
+  ngOnInit() {
 
     if(environment.token == ''){
-
       this.router.navigate(['/entrar'])
     }
-   this.idTema= this.route.snapshot.params["id"]
-    this.findByIdTema(this.idTema)
+
+    this.idTema= this.route.snapshot.params["id"];
+    this.findByIdTema(this.idTema);
   }
-  
-   findByIdTema(id:number){
+
+  findByIdTema(id:number){
 
     this.temaService.getByIdTema(this.idTema).subscribe((resp:Tema)=>{
-      this.tema = resp
+      this.tema = resp;
     })
 
 }

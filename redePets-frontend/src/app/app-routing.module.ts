@@ -4,10 +4,8 @@ import { CadastrarComponent } from './component/cadastrar/cadastrar.component';
 import { EntrarComponent } from './component/entrar/entrar.component';
 import { InicioDeslogadoComponent } from './component/inicio-deslogado/inicio-deslogado.component';
 import { InicioLogadoComponent } from './component/inicio-logado/inicio-logado.component';
-import { MenuComponent } from './component/menu/menu.component';
-import { RodapeComponent } from './component/rodape/rodape.component';
 import { TemaComponent } from './component/tema/tema.component';
-import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { TemaDeleteComponent } from './component/delete/tema-delete/tema-delete.component';
 
 const routes: Routes = [
 

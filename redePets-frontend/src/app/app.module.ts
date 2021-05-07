@@ -12,8 +12,8 @@ import { InicioDeslogadoComponent } from './component/inicio-deslogado/inicio-de
 import { InicioLogadoComponent } from './component/inicio-logado/inicio-logado.component';
 import { FormsModule } from '@angular/forms';
 import { TemaComponent } from './component/tema/tema.component';
-import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
-import { EditComponent } from './component/edit/edit.component';
+import { TemaDeleteComponent } from './component/delete/tema-delete/tema-delete.component';
+import { TemaEditComponent } from './component/edit/tema-edit/tema-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { EditComponent } from './component/edit/edit.component';
     InicioLogadoComponent,
     TemaComponent,
     TemaDeleteComponent,
-    EditComponent
+    TemaEditComponent
   ],
   imports: [
     HttpClientModule,
