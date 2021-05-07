@@ -1,11 +1,10 @@
-  
-#img-bg{
-    background-image: url('https://via.placeholder.com/1200');
-    
-    min-height: 695px;
-    
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.container-fluid{
+  background-color: #E0C1AD;
+}
 
+.card {
+  box-shadow: 1px 1px 5px #A27E6E;
+  background-color: #A27E6E;
+  padding: 30px;
+  border-radius: 5px;
 }
