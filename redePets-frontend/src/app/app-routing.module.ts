@@ -6,6 +6,7 @@ import { InicioDeslogadoComponent } from './component/inicio-deslogado/inicio-de
 import { InicioLogadoComponent } from './component/inicio-logado/inicio-logado.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { RodapeComponent } from './component/rodape/rodape.component';
+import { TemaComponent } from './component/tema/tema.component';
 
 const routes: Routes = [
 
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'entrar', component: EntrarComponent },
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'inicio-logado', component: InicioLogadoComponent},
-  {path: 'inicio-deslogado', component: InicioDeslogadoComponent}
+  {path: 'inicio-deslogado', component: InicioDeslogadoComponent},
+  {path:'tema',component:TemaComponent}
 
 ];
 

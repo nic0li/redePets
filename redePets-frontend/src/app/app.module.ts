@@ -11,6 +11,7 @@ import { CadastrarComponent } from './component/cadastrar/cadastrar.component';
 import { InicioDeslogadoComponent } from './component/inicio-deslogado/inicio-deslogado.component';
 import { InicioLogadoComponent } from './component/inicio-logado/inicio-logado.component';
 import { FormsModule } from '@angular/forms';
+import { TemaComponent } from './component/tema/tema.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     EntrarComponent,
     CadastrarComponent,
     InicioDeslogadoComponent,
-    InicioLogadoComponent
+    InicioLogadoComponent,
+    TemaComponent
   ],
   imports: [
     HttpClientModule,
