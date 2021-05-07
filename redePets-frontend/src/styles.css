@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+.im-50 {
+    width: 70px;
+    height: 70px;
+}
+
+.form{
+    width: 400px;
+    margin: auto;
+    padding-top: 40px;
+
+}
+
+.card-top {
+    text-align: center;
+}
+
+.cor-botao {
+    background-color: #312227;
+}

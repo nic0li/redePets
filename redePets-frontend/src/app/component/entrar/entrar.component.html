@@ -1,37 +1,36 @@
 <div class="container-fluid">
 
-    <div class="row d-flex align-items-center">
+    <div class="row d-flex justify-content-center">
 
-     <div class="col-md-6">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
-                <h1 class="text-center mb-3">Entrar</h1>
+        <div class="col-md-12 mt-5 mb-5">
 
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input [(ngModel)]="usuarioLogin.email" class="form-control" type="text" name="email" id="email" placeholder="Digite seu e-mail">
-            </div>
+          <form class="form" action="">   
 
-            <div class="form-group">
-                <label for="senha">Senha</label>
-                <input [(ngModel)]="usuarioLogin.senha" class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
-            </div>
+              <div class="card">
 
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-success" (click)="entrar()">Entrar</button>
-            </div>
+                    <div class="card-top ">
+                        <h1 class="text-center">Entrar</h1>
+                        <img class="im-50 text-center mt-3" src="https://i.imgur.com/eA1LIxO.png" alt="imagem do doguinho">
+                    </div>
 
-            <hr class="mt-5 mb-5">
-            <p class="text-center">
-                Não tem uma conta?
-                <br>
-               <a routerLink="/cadastrar"> Cadastre-se</a>
-            </p>
-            </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input class="form-control" type="email" name="email" id="email" placeholder="Entre com seu email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input class="form-control" type="senha" name="senha" id="senha" placeholder="Entre com sua senha">
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-5">
+                        <button type="submit" class="btn btn-outline-dark mr-4">Entrar</button>
+                        <button type="submit" class="btn btn-outline-dark">Cancelar</button>
+                    </div>
+                
+                </div>
+          </form>
         </div>
+    </div>   
 
-     </div>
-     <div class="col-md-6" id="img-bg"></div>
-
-    </div>
 </div>

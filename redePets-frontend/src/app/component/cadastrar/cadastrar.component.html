@@ -16,17 +16,17 @@
                             <input [(ngModel)]="usuario.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Entre com seu nome">
                         </div>
 
-                        <div class="fom-group">
+                        <div class="form-group">
                             <label for="email">E-mail</label>
                             <input [(ngModel)]="usuario.email" class="form-control" type="email" name="email" id="email" placeholder="Entre com seu email">
                         </div>
 
-                        <div class="fom-group">
+                        <div class="form-group">
                             <label for="senha">Senha</label>
                             <input (input)="confirmarSenha($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
                         </div>
 
-                        <div class="fom-group">
+                        <div class="form-group">
                             <label for="confirmeSenha">Confirme Senha</label>
                             <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha">
                         </div>
