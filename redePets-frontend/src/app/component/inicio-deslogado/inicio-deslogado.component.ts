@@ -10,16 +10,15 @@ import { environment } from 'src/environments/environment.prod';
 export class InicioDeslogadoComponent implements OnInit {
 
   constructor(
-
     private router: Router
   ) { }
 
   ngOnInit() {
 
     if(environment.token == ''){
-
       this.router.navigate(['/entrar'])
     }
+    
   }
 
 }

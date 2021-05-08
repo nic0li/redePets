@@ -13,12 +13,12 @@ export class InicioLogadoComponent implements OnInit {
     private router:Router
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
 
     if(environment.token == ''){
-
       this.router.navigate(['/entrar'])
     }
+    
   }
 
 }

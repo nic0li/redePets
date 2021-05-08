@@ -11,8 +11,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class TemaEditComponent implements OnInit {
 
-tema: Tema = new Tema;
-
+  tema: Tema = new Tema();
 
   constructor(
     private temaService: TemaService,
@@ -28,21 +27,21 @@ tema: Tema = new Tema;
 
     let id = this.route.snapshot.params['id'];
     this.findByIdTema(id);
+
   }
 
-  findByIdTema(id:number){
-
-    this.temaService.getByIdTema(id).subscribe((resp:Tema)=>{
+  findByIdTema(id: number) {
+    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
       this.tema = resp;
     })
+  }
 
-}
-
-atualizar(){
-  this.temaService.putTema(this.tema).subscribe((resp:Tema)=>{
-    this.tema = resp;
-    alert("Tema atualizado com sucesso!!")
-  })
-}
+  atualizar() {
+    this.temaService.putTema(this.tema).subscribe((resp:Tema) => {
+      this.tema = resp;
+      alert("Tema atualizado com sucesso!");
+      this.router.navigate(["/tema"]);
+    })
+  }
 
 }
