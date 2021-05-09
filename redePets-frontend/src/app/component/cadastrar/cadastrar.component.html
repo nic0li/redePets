@@ -1,61 +1,57 @@
-
 <div class="container-fluid">
-
   <div class="row d-flex justify-content-center">
 
-      <div class="col-md-12 mt-5 mb-5">
+    <div class="col-md-12 mt-5 mb-5">
+      <form class="form card" action="">
 
-        <form class="form" action="">
+        <div class="card-top">
+          <h1 class="text-center">Cadastrar</h1>
+          <img class="im-50 text-center mt-3" src="https://i.imgur.com/AlJ2JW4.png" alt="Imagem gato">
+        </div>
 
-            <div class="card">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input [(ngModel)]="usuario.nome" class="form-control" type="text" name="nome" id="nome"
+            placeholder="Seu nome">
+        </div>
 
-                  <div class="card-top ">
-                      <h1 class="text-center">Cadastrar</h1>
-                      <img class="im-50 text-center mt-3" src="https://i.imgur.com/AlJ2JW4.png" alt="Imagem gato">
-                  </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input [(ngModel)]="usuario.email" class="form-control" type="email" name="email" id="email"
+            placeholder="Entre com seu email">
+        </div>
 
-                  <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input [(ngModel)]="usuario.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
-                  </div>
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input (input)="confirmarSenha($event)" class="form-control" type="password" name="senha" id="senha"
+            placeholder="Sua senha">
+        </div>
 
-                  <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input [(ngModel)]="usuario.email" class="form-control" type="email" name="email" id="email"
-                      placeholder="Entre com seu email">
-                  </div>
+        <div class="form-group">
+          <label for="confirmeSenha">Confirme Senha</label>
+          <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmeSenha"
+            id="confirmeSenha" placeholder="Confirme sua senha">
+        </div>
 
-                  <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input (input)="confirmarSenha($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
-                  </div>
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input [(ngModel)]="usuario.telefone" class="form-control" type="tel" name="telefone" id="telefone"
+            placeholder="Digite o numero de celular">
+        </div>
 
-                  <div class="form-group">
-                    <label for="confirmeSenha">Confirme Senha</label>
-                    <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha">
-                  </div>
+        <div class="form-group">
+          <label for="foto">Foto de perfil</label>
+          <input [(ngModel)]="usuario.foto" class="form-control" type="text" name="foto" id="confirmeSenha"
+            placeholder="Insira o link da foto de perfil">
+        </div>
 
-                  <div class="form-group">
-                    <label for="telefone">Telefone</label>
-                    <input [(ngModel)]="usuario.telefone" class="form-control" type="tel" name="telefone" id="telefone"
-                      placeholder="Digite o numero de celular">
-                  </div>
+        <div class="d-flex justify-content-center mt-5">
+          <button type="submit" class="btn btn-outline-dark mr-4" (click)='cadastrar()'>Cadastrar</button>
+          <button type="submit" class="btn btn-outline-dark" routerLink='/'>Cancelar</button>
+        </div>
 
-                  <div class="form-group">
-                    <label for="foto">Foto de perfil</label>
-                    <input [(ngModel)]="usuario.foto" class="form-control" type="text" name="foto"
-                      id="confirmeSenha" placeholder="Insira o link da foto de perfil">
-                  </div>
-
-                  <div class="d-flex justify-content-center mt-5">
-                      <button type="submit" class="btn btn-outline-dark mr-4" routerLink='/entrar'>Cancelar</button>
-                      <button type="submit" class="btn btn-outline-dark"(click)='cadastrar()'>Cadastrar</button>
-                  </div>
-
-              </div>
-        </form>
-      </div>
+      </form>
+    </div>
   </div>
 
 </div>
-

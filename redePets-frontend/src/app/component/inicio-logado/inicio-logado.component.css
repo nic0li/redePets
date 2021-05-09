@@ -1,9 +1,10 @@
 .card {
-    box-shadow: 1px 1px 5px #E0C1AD;
-    background-color: #E0C1AD;
-    padding: 20px;
-    border-radius: 0px;
+  box-shadow: 1px 1px 5px #E0C1AD;
+  background-color: #E0C1AD;
+  padding: 20px;
+  border-radius: 0px;
 }
-.cards-missao{
-    height: 400px;
+
+.cards-missao {
+  height: 400px;
 }

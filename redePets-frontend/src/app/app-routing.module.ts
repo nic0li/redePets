@@ -10,17 +10,17 @@ import { TemaEditComponent } from './component/edit/tema-edit/tema-edit.componen
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'inicio-deslogado', pathMatch: 'full'},
+  //{path: '', redirectTo: '', pathMatch: 'full'},
+
+  {path: '', component: InicioDeslogadoComponent},
+  {path: 'inicio', component: InicioLogadoComponent},
 
   {path: 'entrar', component: EntrarComponent },
   {path: 'cadastrar', component: CadastrarComponent},
 
-  {path: 'inicio-logado', component: InicioLogadoComponent},
-  {path: 'inicio-deslogado', component: InicioDeslogadoComponent},
-
   {path: 'tema', component: TemaComponent},
-  {path: 'tema-edit/:id', component: TemaEditComponent},
-  {path: 'tema-delete/:id', component: TemaDeleteComponent}
+  {path: 'tema/edit/:id', component: TemaEditComponent},
+  {path: 'tema/delete/:id', component: TemaDeleteComponent}
 
 ];
 

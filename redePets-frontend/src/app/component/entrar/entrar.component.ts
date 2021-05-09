@@ -16,7 +16,7 @@ export class EntrarComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit() {
     window.scroll(0,0);
@@ -31,13 +31,11 @@ export class EntrarComponent implements OnInit {
       environment.foto = this.usuarioLogin.foto;
       environment.id = this.usuarioLogin.id;
 
-      this.router.navigate(['/inicio-logado']);
+      this.router.navigate(['/inicio']);
     }, err => {
 
       if(err.status == 500){
-
-        alert("Usuário ou senha incorretos")
-
+        alert("Usuário ou senha incorretos!");
       }
     })
 

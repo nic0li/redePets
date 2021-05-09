@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment.prod';
 export class InicioLogadoComponent implements OnInit {
 
   constructor(
-    private router:Router
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class InicioLogadoComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
-    
+
   }
 
 }

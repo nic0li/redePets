@@ -35,13 +35,13 @@ export class CadastrarComponent implements OnInit {
     this.usuario.tipo = this.tipo;
 
     if(this.usuario.senha != this.senha){
-      alert("As senhas não conferem!")
+      alert("As senhas não conferem!");
     }
     else{
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
         this.router.navigate(['/entrar']);
-        alert("Usuário cadastrado com sucesso");
+        alert("Usuário cadastrado com sucesso!");
       })
     }
 
