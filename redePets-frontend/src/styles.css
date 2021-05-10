@@ -1,40 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
-.im-50 {
-    width: 70px;
-    height: 70px;
+
+* {
+  font-family: 'Karma', serif;
+  font-weight: 500;
 }
 
-.form{
-    width: 400px;
-    margin: auto;
-    padding-top: 40px;
+h1, h2, h3, h4, h5 {
+  font-family: 'Itim', cursive;
+}
 
+.im-50 {
+  width: 70px;
+  height: 70px;
+}
+
+.form {
+  width: 400px;
+  margin: auto;
+  padding-top: 40px;
 }
 
 .card-top {
-    text-align: center;
+  text-align: center;
 }
 
 .cor-marrom {
-    background-color: #312227;
+  background-color: #312227;
 }
 
 .cor-bege {
-    background-color: #E0C1AD;
+  background-color: #E0C1AD;
 }
 
 .cor-marrom-claro {
-    background-color: #A27E6E;
+  background-color: #A27E6E;
 }
 
 .cor-laranja {
-    background-color: #CA6536;
+  background-color: #CA6536;
 }
 
 .cor-vinho {
-    background-color: #931D33;
+  background-color: #931D33;
+}
+
+.txt-marrom {
+  color: #312227;
+}
+
+.txt-bege {
+  color: #E0C1AD;
+}
+
+.txt-marrom-claro {
+  color: #A27E6E;
+}
+
+.txt-laranja {
+  color: #CA6536;
+}
+
+.txt-vinho {
+  color: #931D33;
 }
 
 .txt-branco {
-    color: white;
+  color: white;
 }
