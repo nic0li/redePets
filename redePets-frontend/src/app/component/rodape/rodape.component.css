@@ -10,20 +10,20 @@ ul.social-network li{
 }
 
 .fa{
-    font-size: 35pt;
+    font-size: 20pt;
     color: white;
     padding: 10px;
 
 }
 
-.fa-facebook-square:hover{
-    color: #3b5998;
+.fa-spring-square:hover{
+    color: #3d7a2d;
 }
 
-.fa-instagram:hover{
-    color: rgb(246, 148, 164);
+.fa-bootstrap:hover{
+    color: rgb(107, 28, 100);
 }
 
-.fa-linkedin-square:hover{
-    color: #0072b1;
+.fa-angular-square:hover{
+    color: #dd1616;
 }
