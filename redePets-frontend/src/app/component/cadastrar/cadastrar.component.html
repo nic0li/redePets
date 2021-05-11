@@ -34,16 +34,19 @@
         </div>
 
         <div class="form-group">
-          <label for="telefone">Telefone</label>
-          <input [(ngModel)]="usuario.telefone" class="form-control" type="tel" name="telefone" id="telefone"
-            placeholder="Digite o numero de celular">
-        </div>
-
-        <div class="form-group">
           <label for="foto">Foto de perfil</label>
           <input [(ngModel)]="usuario.foto" class="form-control" type="text" name="foto" id="confirmeSenha"
             placeholder="Insira o link da foto de perfil">
         </div>
+
+        <div class="form-group">
+          <label for="tipo">Tipo de Usuário</label>
+          <select class="form-control" name="tipo" id="tipo">
+              <option>Selecione seu tipo de Usuário:</option>
+              <option value="normal">Quero adotar</option>
+              <option value="adm">Quero doar</option>
+          </select>
+      </div>
 
         <div class="d-flex justify-content-center mt-5">
           <button type="submit" class="btn btn-outline-dark mr-4" (click)='cadastrar()'>Cadastrar</button>

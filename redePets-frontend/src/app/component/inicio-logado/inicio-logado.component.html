@@ -14,7 +14,8 @@
             <p>A Rede Pets é uma plataforma que visa conectar pessoas que desejam adotar pets com outras
               que possuem pets disponíveis para adoção.
             </p>
-            <button type="submit" class="btn btn-outline-dark" routerLink='/tema'>Temas</button>
+            <button type="submit" class="btn btn-outline-dark mr-4" routerLink='/tema'>Temas</button>
+            <button type="submit" class="btn btn-outline-dark" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
           </div>
 
         </div>
@@ -52,3 +53,59 @@
     </div>
   </div>
 </nav>
+
+<div class="container mt-5 mb-5">
+  
+  <div class="row">
+
+        <div class="col-md-3 card-perfil mr-5">
+
+          <p class="mt-3 text-center text-white">Perfil</p>
+
+          <div class="row d-flex justify-content-center">
+            
+              <img src="{{foto}}" alt="Foto do usuário" width="120px" height="120px" class="card-foto">
+
+          </div>
+
+          <div>
+            <p class="mt-5 font-weight-bold text-white text-center fs-16">{{nome}}</p>
+          </div>
+
+          <div>
+            <p class="mt-3 font-weight-bold text-white text-center fs-16">{{tipo}}</p>
+          </div>
+            
+        </div> 
+        
+      
+        
+        <div class="col-md-8">
+
+          
+        <div class="row mb-5 card-postagem">
+          <div class="d-flex justify-content-start col-md-12 ">
+              
+                <img src="{{foto}}" alt="Foto do usuário" width="50px" height="50px" class="card-foto mr-2">
+
+              <div class="col-md-10 card-publicacao mt-2">
+                <p class="fs-16 mt-2">Começar publicação</p>
+              </div>
+        </div>
+           
+
+        </div>
+
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12 card-postagem mt-5">
+              
+            </div>
+
+          </div>
+  
+        </div>
+
+  </div>
+        
+  
+</div>

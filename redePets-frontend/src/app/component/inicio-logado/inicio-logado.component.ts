@@ -9,6 +9,10 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class InicioLogadoComponent implements OnInit {
 
+  nome = environment.nome;
+  foto = environment.foto;
+  tipo = environment.tipo;
+
   constructor(
     private router: Router
   ) { }

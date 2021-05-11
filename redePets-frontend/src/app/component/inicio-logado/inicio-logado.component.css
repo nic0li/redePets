@@ -4,3 +4,33 @@
   padding: 20px;
   border-radius: 0px;
 }
+
+.card-perfil {
+  box-shadow: 1px 1px 5px #A27E6E;
+  background-color: #A27E6E;
+  padding: 10px;
+  border-radius: 20px;
+  width: 100px;
+  height: 400px;
+}
+
+.card-postagem {
+  box-shadow: 1px 1px 5px #A27E6E;
+  background-color: #A27E6E;
+  padding: 10px;
+  border-radius: 0px;
+}
+
+.card-foto {
+  border-radius: 50%;
+}
+
+.card-publicacao {
+  background-color: white;
+  border-radius: 30px;  
+  height: 30px;
+}
+
+.fs-16 {
+  font-size: 16pt;
+}
