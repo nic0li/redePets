@@ -24,14 +24,18 @@ export class AuthService {
     return this.http.post<Usuario> (`${this.serverPort}/usuarios/cadastrar`, usuario);
   }
 
+  getByIdUsuario(id: number): Observable<Usuario> {
+    return this.http.get<Usuario>(`${this.serverPort}/usuarios/${id}`);
+  }
+
   logado(){
     let ok: boolean = false;
-    
+
     if(environment.token != ''){
       ok = true;
     }
 
     return ok;
   }
-  
+
 }
