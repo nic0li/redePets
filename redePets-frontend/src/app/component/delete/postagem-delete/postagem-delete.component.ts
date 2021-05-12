@@ -19,21 +19,21 @@ export class PostagemDeleteComponent implements OnInit {
 
     private router: Router,
     private route: ActivatedRoute,
-    private postagemService: PostagemService,
-    private temaService: TemaService
+    private postagemService: PostagemService
   ) { }
 
   ngOnInit() {
 
     window.scroll(0,0)
-    
+
     if(environment.token == ''){
 
       this.router.navigate(['/entrar'])
     }
-   this.idPost = this.route.snapshot.params['id']
+
+    this.idPost = this.route.snapshot.params['id']
     this.findByIdPostagem(this.idPost)
-   
+
   }
 
   findByIdPostagem(id:number){
@@ -42,6 +42,7 @@ export class PostagemDeleteComponent implements OnInit {
     })
 
   }
+  
   apagar(){
     this.postagemService.deletePostagem(this.idPost).subscribe(()=>{
       alert("Postagem apagada com sucesso!")
