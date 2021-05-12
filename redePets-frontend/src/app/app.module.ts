@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { TemaComponent } from './component/tema/tema.component';
 import { TemaDeleteComponent } from './component/delete/tema-delete/tema-delete.component';
 import { TemaEditComponent } from './component/edit/tema-edit/tema-edit.component';
+import { PostagemEditComponent } from './component/edit/postagem-edit/postagem-edit.component';
+import { PostagemDeleteComponent } from './component/delete/postagem-delete/postagem-delete.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TemaEditComponent } from './component/edit/tema-edit/tema-edit.componen
     InicioLogadoComponent,
     TemaComponent,
     TemaDeleteComponent,
-    TemaEditComponent
+    TemaEditComponent,
+    PostagemEditComponent,
+    PostagemDeleteComponent
   ],
   imports: [
     HttpClientModule,
