@@ -21,7 +21,7 @@ public class UsuarioService {
 	
 	public Optional<Usuario> CadastrarUsuario(Usuario usuario) {
 		
-		if (repository.findByEmail(usuario.getEmail()).isPresent()) {
+		if (repository.findByEmail(usuario.getEmail()).isPresent()&& usuario.getId() == 0) {
 			return null;
 		}
 		
