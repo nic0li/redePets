@@ -5,20 +5,11 @@
   border-radius: 0px;
 }
 
-.card-perfil {
-  box-shadow: 1px 1px 5px #A27E6E;
-  background-color: #A27E6E;
-  padding: 10px;
-  border-radius: 20px;
-  width: 100px;
-  height: 400px;
-}
-
 .card-postagem {
   box-shadow: 1px 1px 5px #A27E6E;
   background-color: #A27E6E;
-  padding: 10px;
-  border-radius: 0px;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .card-foto {
@@ -28,9 +19,32 @@
 .card-publicacao {
   background-color: white;
   border-radius: 30px;  
-  height: 30px;
+  padding: 10px;
 }
+
 
 .fs-16 {
   font-size: 16pt;
+}
+
+.btn {
+    animation: bg 10s infinite;
+    animation-timing-function: linear
+
+}
+
+.card-img-top {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+.card-img-top:hover {
+    -webkit-transform:scale(1.15); /* Safari and Chrome */
+    -moz-transform:scale(1.15); /* Firefox */
+    -ms-transform:scale(1.15); /* IE 9 */
+    -o-transform:scale(1.15); /* Opera */
+     transform:scale(1.15);
 }
