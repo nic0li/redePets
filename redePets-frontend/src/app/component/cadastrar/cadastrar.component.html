@@ -41,10 +41,10 @@
 
         <div class="form-group">
           <label for="tipo">Tipo de Usuário</label>
-          <select class="form-control" name="tipo" id="tipo">
+          <select (change)="tipoUsuario($event)" class="form-control" name="tipo" id="tipo">
               <option>Selecione seu tipo de Usuário:</option>
-              <option value="normal">Quero adotar</option>
-              <option value="adm">Quero doar</option>
+              <option value="adotar">Quero adotar</option>
+              <option value="doar">Quero doar</option>
           </select>
       </div>
 
