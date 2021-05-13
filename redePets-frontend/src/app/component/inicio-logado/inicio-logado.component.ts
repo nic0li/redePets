@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 import { Tema } from 'src/app/model/Tema';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
@@ -29,11 +30,15 @@ export class InicioLogadoComponent implements OnInit {
   usuario: Usuario = new Usuario();
   idUsuario = environment.id;
 
+  key = 'data'
+  reverse = true
+
   constructor(
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas:AlertasService
   ) { }
 
   ngOnInit() {
@@ -83,7 +88,7 @@ export class InicioLogadoComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((response: Postagem) => {
       this.postagem = response;
-      alert("Postagem realizada com sucesso!");
+      this.alertas.showAlertSuccess("Postagem realizada com sucesso!");
       this.findAllPostagens();
       this.postagem = new Postagem();
     });

@@ -16,7 +16,9 @@ import { TemaDeleteComponent } from './component/delete/tema-delete/tema-delete.
 import { TemaEditComponent } from './component/edit/tema-edit/tema-edit.component';
 import { PostagemEditComponent } from './component/edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './component/delete/postagem-delete/postagem-delete.component';
-
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
+import { AlertasComponent } from './component/alertas/alertas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,13 +32,16 @@ import { PostagemDeleteComponent } from './component/delete/postagem-delete/post
     TemaDeleteComponent,
     TemaEditComponent,
     PostagemEditComponent,
-    PostagemDeleteComponent
+    PostagemDeleteComponent,
+    AlertasComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,

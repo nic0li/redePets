@@ -79,7 +79,7 @@
                             <div class="col-md-10">
                   
                             <div class="row mt-5" *ngFor='let tema of listaTemas'>
-                              <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3" *ngFor='let item of tema.postagem'> 
+                              <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3" *ngFor='let item of tema.postagem | orderBy: key: reverse'> 
                 
                                 <div class="col-md-12 d-flex justify-content-start p-3">
                 
@@ -125,7 +125,7 @@
                     <div class="col-md-10">
           
                     <div class="row mt-5" *ngFor='let tema of listaTemas'>
-                      <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3" *ngFor='let item of tema.postagem'> 
+                      <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3" *ngFor='let item of tema.postagem | orderBy: key: reverse'> 
         
                         <div class="col-md-12 d-flex justify-content-start p-3">
         
@@ -177,7 +177,7 @@
                     <div class="col-md-10">
           
                     <div class="row mt-5" *ngFor='let tema of listaTemas'>
-                      <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3" *ngFor='let item of tema.postagem'> 
+                      <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3" *ngFor='let item of tema.postagem | orderBy: key: reverse'> 
         
                         <div class="col-md-12 d-flex justify-content-start p-3">
         
