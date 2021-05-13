@@ -9,18 +9,20 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 export class AlertasComponent implements OnInit {
 
   @Input() message: string;
-  @Input() type: string = 'sucsses';
+  @Input() type: string = 'success';
 
   constructor(
-
     public modal: BsModalRef
   ) { }
 
   ngOnInit() {
+
+
+
   }
 
   onClose(){
+    this.modal.hide();
+  }
 
-    this.modal.hide()
-   }  
 }

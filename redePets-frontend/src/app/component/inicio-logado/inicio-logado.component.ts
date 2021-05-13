@@ -22,31 +22,33 @@ export class InicioLogadoComponent implements OnInit {
 
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
+  tituloPostagem: string;
 
   tema: Tema = new Tema();
   listaTemas: Tema[];
   idTema: number;
+  nomeTema: string;
 
   usuario: Usuario = new Usuario();
   idUsuario = environment.id;
 
-  key = 'data'
-  reverse = true
+  key = 'data';
+  reverse = true;
 
   constructor(
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
     private authService: AuthService,
-    private alertas:AlertasService
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
 
     window.scroll(0,0);
 
-    if(environment.token == ''){
-
+    if(localStorage.getItem("token") == null){
+      this.alertas.showAlertInfo("Sua sessão expirou! Faça o login novamente.");
       this.router.navigate(['/entrar'])
     }
 
@@ -90,8 +92,29 @@ export class InicioLogadoComponent implements OnInit {
       this.postagem = response;
       this.alertas.showAlertSuccess("Postagem realizada com sucesso!");
       this.findAllPostagens();
+      this.findAllTemas();
       this.postagem = new Postagem();
     });
+  }
+
+  findByTituloPostagem() {
+    if (this.tituloPostagem == "") {
+      this.findAllPostagens();
+    } else {
+      this.postagemService.getByTituloPostagem(this.tituloPostagem).subscribe((response: Postagem[]) => {
+        this.listaPostagens = response;
+      });
+    }
+  }
+
+  findByNomeTema() {
+    if (this.nomeTema == "") {
+      this.findAllTemas();
+    } else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((response: Tema[]) => {
+        this.listaTemas = response;
+      });
+    }
   }
 
 }

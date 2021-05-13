@@ -15,7 +15,8 @@
               que possuem pets disponíveis para adoção.
             </p>
             <button type="submit" class="btn btn-outline-dark mr-4" routerLink='/tema'>Temas</button>
-            <button type="submit" class="btn btn-outline-dark" data-toggle="modal" data-target="#nova-postagem">Nova Postagem</button>
+            <button type="submit" class="btn btn-outline-dark" data-toggle="modal" data-target="#nova-postagem">Nova
+              Postagem</button>
           </div>
 
         </div>
@@ -26,208 +27,224 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-          <div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="container mt-5">
 
-            <div class="row w-100">
-                <div class="col-md-4">
-                    <div class="card border-0 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                        <div class="d-flex justify-content-center">
-                            <img class="card-img-top w-100 " src="{{foto}}" alt="Imagem de capa do card">
-                        </div>
-        
-                        <div class="card-body cor-marrom-claro">
-                            <h5 class="card-title text-center font-weight-bold">{{nome}}</h5>
-                            <p class="card-text text-center font-italic">Quero adotar</p>
-                        </div>
-        
-                    </div>
-                </div>
-                
-            </div>
-        
-          </div>
-
-        </div>
-
-        <div class="col-md-8">
-
-          <div class="container mt-5 mb-5" id="postagens">
-            <nav>
-                <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
-          
-                  <a class="nav-item nav-link active text-secondary font-weight-bold" id="todasPostagens-tab" data-toggle="tab"
-                  href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas as Postagens</a>
-          
-                  <a (click)='findByIdUsuario()' class="nav-item nav-link text-secondary font-weight-bold" id="minhasPostagens-tab" data-toggle="tab"
-                  href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false">Minhas Postagens</a>
-          
-                  <a class="nav-item nav-link text-secondary font-weight-bold" id="postagensTema-tab" data-toggle="tab"
-                  href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por Tema</a>
-          
-                </div>
-              </nav>
-
-          <div class="tab-content mt-5" id="nav-tabContent">
-
-          
-              <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
-              
-                  <div class="row d-flex justify-content-center">
-                            
-                            <div class="col-md-10">
-                  
-                            <div class="row mt-5" *ngFor='let tema of listaTemas'>
-                              <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3" *ngFor='let item of tema.postagem | orderBy: key: reverse'> 
-                
-                                <div class="col-md-12 d-flex justify-content-start p-3">
-                
-                                  <img src="{{item.usuario.foto}}" alt="Foto do usuário" width="50px" height="50px" class="card-foto mr-2">
-                    
-                                  <div>
-                                    <p class="mt-2 font-weight-bold text-white fs-16">{{item.usuario.nome}}</p>
-                                  </div>
-                                  
-                                </div> 
-                
-                                <div>
-                                  <p class="text-center">{{item.tema}}</p>
-                                </div>
-                
-                                <div class="container">
-                                  <div class="row d-flex justify-content-center">
-                                
-                                            <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12">{{item.titulo}}</h5>
-                                
-                                            <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}.</p>
-                                
-                                              <p>
-                                                <small>
-                                                  {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
-                                      
-                                              <hr>
-                                              
-                                                <img src="https://dogcatcompany.com.br/wp-content/uploads/2019/10/dog.jpg" alt="Foto" class="col-md-12 d-flex justify-content-center mb-4"> 
-                                                                  
-                                        </div>
-                                      </div> 
-                                    </div>
-                                  </div>         
-                            </div>
-                        </div>
+        <div class="row w-100">
+          <div class="col-md-4">
+            <div class="card border-0 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+              <div class="d-flex justify-content-center">
+                <img class="card-img-top w-100 " src="{{foto}}" alt="Imagem de capa do card">
               </div>
 
-                <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
-          
-                  <div class="row d-flex justify-content-center">
-                            
-                    <div class="col-md-10">
-          
-                    <div class="row mt-5" *ngFor='let tema of listaTemas'>
-                      <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3" *ngFor='let item of tema.postagem | orderBy: key: reverse'> 
-        
-                        <div class="col-md-12 d-flex justify-content-start p-3">
-        
-                          <img src="{{item.usuario.foto}}" alt="Foto do usuário" width="50px" height="50px" class="card-foto mr-2">
-            
-                          <div>
-                            <p class="mt-2 font-weight-bold text-white fs-16">{{item.usuario.nome}}</p>
-                          </div>
-                          
-                        </div> 
-        
-                        <div>
-                          <p class="text-center">{{item.tema}}</p>
-                        </div>
-        
-                        <div class="container">
-                          <div class="row d-flex justify-content-center">
-                        
-                                    <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12">{{item.titulo}}</h5>
-                        
-                                    <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}.</p>
-                        
-                                      <p>
-                                        <small>
-                                          {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
-                              
-                                      <hr>
-                                      
-                                        <img src="https://dogcatcompany.com.br/wp-content/uploads/2019/10/dog.jpg" alt="Foto" class="col-md-12 d-flex justify-content-center mb-4"> 
-        
-                                        <button class="btn btn-outline-info mr-3" [routerLink]="['/postagem/edit',item.id]">Editar</button>
-        
-                                        <button class="btn btn-outline-danger" [routerLink]="['/postagem/delete',item.id]" >Apagar</button>
-                                            
-                                </div>
-                              </div> 
-                            </div>
-                          </div>         
-                    </div>
-                </div>
+              <div class="card-body cor-marrom-claro">
+                <h5 class="card-title text-center font-weight-bold">{{nome}}</h5>
+                <p class="card-text text-center font-italic">Quero adotar</p>
+              </div>
 
-                </div>
-          
-
-                <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
-          
-                  <div class="row d-flex justify-content-center">
-                            
-                    <div class="col-md-10">
-          
-                    <div class="row mt-5" *ngFor='let tema of listaTemas'>
-                      <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3" *ngFor='let item of tema.postagem | orderBy: key: reverse'> 
-        
-                        <div class="col-md-12 d-flex justify-content-start p-3">
-        
-                          <img src="{{item.usuario.foto}}" alt="Foto do usuário" width="50px" height="50px" class="card-foto mr-2">
-            
-                          <div>
-                            <p class="mt-2 font-weight-bold text-white fs-16">{{item.usuario.nome}}</p>
-                          </div>
-                          
-                        </div> 
-        
-                        <div>
-                          <p class="text-center">{{item.tema}}</p>
-                        </div>
-        
-                        <div class="container">
-                          <div class="row d-flex justify-content-center">
-                        
-                                    <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12">{{item.titulo}}</h5>
-                        
-                                    <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}.</p>
-                        
-                                      <p>
-                                        <small>
-                                          {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
-                              
-                                      <hr>
-                                      
-                                        <img src="https://dogcatcompany.com.br/wp-content/uploads/2019/10/dog.jpg" alt="Foto" class="col-md-12 d-flex justify-content-center mb-4"> 
-                                                          
-                                </div>
-                              </div> 
-                            </div>
-                          </div>         
-                    </div>
-                </div>
-      </div>
-
-                </div>
-          </div>
-          
+            </div>
           </div>
 
         </div>
+
+      </div>
+
     </div>
+
+    <div class="col-md-8">
+
+      <div class="container mt-5 mb-5" id="postagens">
+        <nav>
+          <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+
+            <a class="nav-item nav-link active text-secondary font-weight-bold" id="todasPostagens-tab"
+              data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens"
+              aria-selected="true">Todas as Postagens</a>
+
+            <a (click)='findByIdUsuario()' class="nav-item nav-link text-secondary font-weight-bold"
+              id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab"
+              aria-controls="minhasPostagens" aria-selected="false">Minhas Postagens</a>
+
+            <a class="nav-item nav-link text-secondary font-weight-bold" id="postagensTema-tab" data-toggle="tab"
+              href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por
+              Tema</a>
+
+          </div>
+        </nav>
+
+        <div class="tab-content mt-5" id="nav-tabContent">
+
+
+          <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+            aria-labelledby="todasPostagens-tab">
+
+            <div class="row d-flex justify-content-center">
+
+              <div class="col-md-10">
+
+                <div class="row mt-5" *ngFor='let tema of listaTemas'>
+                  <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
+                    *ngFor='let item of tema.postagem | orderBy: key: reverse'>
+
+                    <div class="col-md-12 d-flex justify-content-start p-3">
+
+                      <img src="{{item.usuario.foto}}" alt="Foto do usuário" width="50px" height="50px"
+                        class="card-foto mr-2">
+
+                      <div>
+                        <p class="mt-2 font-weight-bold text-white fs-16">{{item.usuario.nome}}</p>
+                      </div>
+
+                    </div>
+
+                    <div>
+                      <p class="text-center">{{item.tema}}</p>
+                    </div>
+
+                    <div class="container">
+                      <div class="row d-flex justify-content-center">
+
+                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12">{{item.titulo}}</h5>
+
+                        <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
+
+                        <p>
+                          <small>
+                            {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
+
+                        <hr>
+
+                        <img src="https://dogcatcompany.com.br/wp-content/uploads/2019/10/dog.jpg" alt="Foto"
+                          class="col-md-12 d-flex justify-content-center mb-4">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
+
+            <div class="row d-flex justify-content-center">
+
+              <div class="col-md-10">
+
+                <div class="row mt-5" *ngFor='let tema of listaTemas'>
+                  <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
+                    *ngFor='let item of tema.postagem | orderBy: key: reverse'>
+
+                    <div class="col-md-12 d-flex justify-content-start p-3">
+
+                      <img src="{{item.usuario.foto}}" alt="Foto do usuário" width="50px" height="50px"
+                        class="card-foto mr-2">
+
+                      <div>
+                        <p class="mt-2 font-weight-bold text-white fs-16">{{item.usuario.nome}}</p>
+                      </div>
+
+                    </div>
+
+                    <div>
+                      <p class="text-center">{{item.tema}}</p>
+                    </div>
+
+                    <div class="container">
+                      <div class="row d-flex justify-content-center">
+
+                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12">{{item.titulo}}</h5>
+
+                        <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
+
+                        <p>
+                          <small>
+                            {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
+
+                        <hr>
+
+                        <img src="https://dogcatcompany.com.br/wp-content/uploads/2019/10/dog.jpg" alt="Foto"
+                          class="col-md-12 d-flex justify-content-center mb-4">
+
+                        <button class="btn btn-outline-info mr-3"
+                          [routerLink]="['/postagem/edit',item.id]">Editar</button>
+
+                        <button class="btn btn-outline-danger"
+                          [routerLink]="['/postagem/delete',item.id]">Apagar</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
+
+            <div class="row d-flex justify-content-center">
+
+              <div class="col-md-10">
+
+                <div class="row mt-5" *ngFor='let tema of listaTemas'>
+                  <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
+                    *ngFor='let item of tema.postagem | orderBy: key: reverse'>
+
+                    <div class="col-md-12 d-flex justify-content-start p-3">
+
+                      <img src="{{item.usuario.foto}}" alt="Foto do usuário" width="50px" height="50px"
+                        class="card-foto mr-2">
+
+                      <div>
+                        <p class="mt-2 font-weight-bold text-white fs-16">{{item.usuario.nome}}</p>
+                      </div>
+
+                    </div>
+
+                    <div>
+                      <p class="text-center">{{item.tema}}</p>
+                    </div>
+
+                    <div class="container">
+                      <div class="row d-flex justify-content-center">
+
+                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12">{{item.titulo}}</h5>
+
+                        <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
+
+                        <p>
+                          <small>
+                            {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
+
+                        <hr>
+
+                        <img src="https://dogcatcompany.com.br/wp-content/uploads/2019/10/dog.jpg" alt="Foto"
+                          class="col-md-12 d-flex justify-content-center mb-4">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
 
 
 
 <!-- MODAL DE PUBLICAR POSTAGEM -->
-<div class="modal fade" id="nova-postagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+<div class="modal fade" id="nova-postagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -240,7 +257,8 @@
 
         <div class="form-group">
           <label for="titulo">Título</label>
-          <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Digite o título">
+          <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
+            placeholder="Digite o título">
         </div>
 
         <div class="form-group">
@@ -250,7 +268,8 @@
 
         <div class="form-group">
           <label for="titulo">Imagem</label>
-          <input [(ngModel)]="postagem.imagem" type="text" class="form-control" id="imagem" placeholder="Digite o título">
+          <input [(ngModel)]="postagem.imagem" type="text" class="form-control" id="imagem"
+            placeholder="Digite o título">
         </div>
 
         <div class="form-group">

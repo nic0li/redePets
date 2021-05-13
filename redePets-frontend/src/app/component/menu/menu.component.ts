@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -9,20 +10,24 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class MenuComponent implements OnInit {
 
+  id = environment.id;
   nome = environment.nome;
   foto = environment.foto;
 
   constructor(
-    private router: Router
+    private router: Router,
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
 
+
+
   }
 
   sair(){
-    this.router.navigate(['/']);
-    environment.token = '';
+    this.router.navigate(['/entrar']);
+    localStorage.removeItem("token");
     environment.nome = '';
     environment.foto = '';
     environment.id = 0;

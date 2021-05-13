@@ -46,7 +46,6 @@ export class CadastrarComponent implements OnInit {
         this.alertas.showAlertSuccess("Usuário cadastrado com sucesso!");
       })
     }
-
   }
 
 }

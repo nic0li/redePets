@@ -16,7 +16,7 @@ export class TemaService {
   ) { }
 
   token = {
-  headers: new HttpHeaders().set("Authorization",environment.token)
+    headers: new HttpHeaders().set("Authorization", localStorage.getItem("token") || "")
   }
 
   getAllTema(): Observable<Tema[]> {
@@ -25,6 +25,10 @@ export class TemaService {
 
   getByIdTema(id:number): Observable<Tema> {
     return this.http.get<Tema>(`${this.serverPort}/temas/${id}`, this.token);
+  }
+
+  getByNomeTema(nome: string): Observable<Tema[]> {
+    return this.http.get<Tema[]>(`${this.serverPort}/temas/nome/${nome}`, this.token);
   }
 
   postTema(tema:Tema): Observable<Tema> {

@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from 'src/app/model/Tema';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { TemaService } from 'src/app/service/tema.service';
-import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-tema-edit',
@@ -25,7 +24,8 @@ export class TemaEditComponent implements OnInit {
 
     window.scroll(0,0);
 
-    if(environment.token == ''){
+    if(localStorage.getItem("token") == null){
+      this.alertas.showAlertInfo("Sua sessão expirou! Faça o login novamente.");
       this.router.navigate(['/entrar']);
     }
 

@@ -31,7 +31,17 @@ export class AuthService {
   logado(){
     let ok: boolean = false;
 
-    if(environment.token != ''){
+    if(localStorage.getItem("token") != null){
+      ok = true;
+    }
+
+    return ok;
+  }
+
+  admin() {
+    let ok: boolean = false;
+
+    if (environment.tipo == "admin") {
       ok = true;
     }
 

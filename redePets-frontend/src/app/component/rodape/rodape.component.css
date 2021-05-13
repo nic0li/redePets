@@ -16,12 +16,16 @@ ul.social-network li{
 
 }
 
+.fa-java-square:hover {
+    color: #F29111;
+}
+
 .fa-spring-square:hover{
     color: #3d7a2d;
 }
 
 .fa-bootstrap:hover{
-    color: rgb(107, 28, 100);
+    color: #6b1c64;
 }
 
 .fa-angular-square:hover{
