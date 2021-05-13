@@ -83,9 +83,9 @@
 
               <div class="col-md-10">
 
-                <div class="row mt-5" *ngFor='let tema of listaTemas'>
+                <div class="row mt-5">
                   <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
-                    *ngFor='let item of tema.postagem | orderBy: key: reverse'>
+                    *ngFor='let item of listaPostagens | orderBy: key: reverse'>
 
                     <div class="col-md-12 d-flex justify-content-start p-3">
 
@@ -99,7 +99,7 @@
                     </div>
 
                     <div>
-                      <p class="text-center">{{item.tema}}</p>
+                      <p class="text-center">Tema: {{item.tema.nome}}</p>
                     </div>
 
                     <div class="container">
@@ -115,7 +115,7 @@
 
                         <hr>
 
-                        <img src="https://dogcatcompany.com.br/wp-content/uploads/2019/10/dog.jpg" alt="Foto"
+                        <img src="{{item.imagem}}" alt="Foto"
                           class="col-md-12 d-flex justify-content-center mb-4">
 
                       </div>
@@ -132,23 +132,37 @@
 
               <div class="col-md-10">
 
-                <div class="row mt-5" *ngFor='let tema of listaTemas'>
+                <div class="row mt-5">
                   <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
-                    *ngFor='let item of tema.postagem | orderBy: key: reverse'>
+                    *ngFor='let item of usuario.postagem | orderBy: key: reverse'>
 
-                    <div class="col-md-12 d-flex justify-content-start p-3">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-2 pr-0 d-flex justify-content-center">
 
-                      <img src="{{item.usuario.foto}}" alt="Foto do usuário" width="50px" height="50px"
+                          <img src="{{foto}}" alt="Foto do usuário" width="50px" height="50px"
                         class="card-foto mr-2">
 
-                      <div>
-                        <p class="mt-2 font-weight-bold text-white fs-16">{{item.usuario.nome}}</p>
-                      </div>
+                        </div>
+
+                        <div class="col-md-6 pl-0">
+                          <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{nome}}</p>
+                            <small class="text-light">
+                            {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
+                        </div>
+
+                        <div class="col-md-4 d-flex justify-content-end">
+
+                          <a class="text-light mr-3"
+                          [routerLink]="['/postagem/edit',item.id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
+                        <a class="text-light"
+                          [routerLink]="['/postagem/delete',item.id]"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </div>
 
                     </div>
 
                     <div>
-                      <p class="text-center">{{item.tema}}</p>
+                      <h5 class="text-center">Tema: {{item.tema.nome}}</h5>
                     </div>
 
                     <div class="container">
@@ -159,19 +173,14 @@
                         <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
 
                         <p>
-                          <small>
-                            {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
+                         </p>
 
                         <hr>
 
-                        <img src="https://dogcatcompany.com.br/wp-content/uploads/2019/10/dog.jpg" alt="Foto"
+                        <img src="{{item.imagem}}" alt="Foto"
                           class="col-md-12 d-flex justify-content-center mb-4">
 
-                        <button class="btn btn-outline-info mr-3"
-                          [routerLink]="['/postagem/edit',item.id]">Editar</button>
-
-                        <button class="btn btn-outline-danger"
-                          [routerLink]="['/postagem/delete',item.id]">Apagar</button>
+              
 
                       </div>
                     </div>
@@ -205,7 +214,7 @@
                     </div>
 
                     <div>
-                      <p class="text-center">{{item.tema}}</p>
+                      <p class="text-center">Tema: {{tema.nome}}</p>
                     </div>
 
                     <div class="container">
@@ -221,7 +230,7 @@
 
                         <hr>
 
-                        <img src="https://dogcatcompany.com.br/wp-content/uploads/2019/10/dog.jpg" alt="Foto"
+                        <img src="{{item.imagem}}" alt="Foto"
                           class="col-md-12 d-flex justify-content-center mb-4">
 
                       </div>
@@ -275,8 +284,7 @@
         <div class="form-group">
           <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>:</label>
           <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">
-            <option *ngFor="let tema of listaTemas" value="{{tema.id}}">
-              {{tema.descricao}}
+            <option *ngFor="let tema of listaTemas" value="{{tema.id}}">{{tema.descricao}}
             </option>
           </select>
         </div>

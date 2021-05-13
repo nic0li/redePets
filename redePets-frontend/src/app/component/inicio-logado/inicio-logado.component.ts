@@ -54,6 +54,7 @@ export class InicioLogadoComponent implements OnInit {
 
     this.findAllTemas();
     this.findAllPostagens();
+    this.findByIdUsuario();
 
   }
 
@@ -72,6 +73,7 @@ export class InicioLogadoComponent implements OnInit {
   findAllPostagens() {
     this.postagemService.getAllPostagem().subscribe((response: Postagem[]) => {
       this.listaPostagens = response;
+      console.log(this.listaPostagens)
     });
   }
 

@@ -10,6 +10,7 @@
   background-color: #A27E6E;
   padding: 20px;
   border-radius: 20px;
+  width: 600px;
 }
 
 .card-foto {
@@ -17,8 +18,8 @@
 }
 
 .card-publicacao {
-  background-color: white;
-  border-radius: 30px;  
+  background-color: #E0C1AD;
+  border-radius: 0px;  
   padding: 10px;
 }
 
