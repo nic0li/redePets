@@ -25,6 +25,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .cor-marrom {
+  color: #312227;
+}
+
+.cor-marrom-back {
   background-color: #312227;
 }
 

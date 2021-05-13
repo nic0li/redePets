@@ -87,32 +87,33 @@
                   <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
                     *ngFor='let item of listaPostagens | orderBy: key: reverse'>
 
-                    <div class="col-md-12 d-flex justify-content-start p-3">
+                    <div class="row d-flex align-items-center">
+                      <div class="col-md-2 pr-0 d-flex justify-content-center">
 
-                      <img src="{{item.usuario.foto}}" alt="Foto do usuário" width="50px" height="50px"
-                        class="card-foto mr-2">
+                        <img src="{{foto}}" alt="Foto do usuário" width="50px" height="50px"
+                      class="card-foto mr-2">
 
-                      <div>
-                        <p class="mt-2 font-weight-bold text-white fs-16">{{item.usuario.nome}}</p>
                       </div>
 
-                    </div>
+                      <div class="col-md-6 pl-0">
+                        <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{nome}}</p>
+                          <small class="text-light">
+                          {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
+                      </div>
+                    </div>  
 
                     <div>
-                      <p class="text-center">Tema: {{item.tema.nome}}</p>
+                      <h5 class="text-center text-light">Eu estou: {{item.tema.nome}}</h5>
                     </div>
 
                     <div class="container">
                       <div class="row d-flex justify-content-center">
 
-                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12">{{item.titulo}}</h5>
+                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12 text-light">{{item.titulo}}</h5>
 
                         <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
 
-                        <p>
-                          <small>
-                            {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
-
+                    
                         <hr>
 
                         <img src="{{item.imagem}}" alt="Foto"
@@ -153,34 +154,29 @@
                         <div class="col-md-4 d-flex justify-content-end">
 
                           <a class="text-light mr-3"
-                          [routerLink]="['/postagem/edit',item.id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                          [routerLink]="['/postagem/edit',item.id]"><i class="fa fa-pencil-square-o fs-20" aria-hidden="true"></i></a>
 
                         <a class="text-light"
-                          [routerLink]="['/postagem/delete',item.id]"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          [routerLink]="['/postagem/delete',item.id]"><i class="fa fa-trash-o fs-20" aria-hidden="true"></i></a>
                         </div>
 
                     </div>
 
                     <div>
-                      <h5 class="text-center">Tema: {{item.tema.nome}}</h5>
+                      <h5 class="text-center text-light">Tema: {{item.tema.nome}}</h5>
                     </div>
 
                     <div class="container">
                       <div class="row d-flex justify-content-center">
 
-                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12">{{item.titulo}}</h5>
+                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12 text-light">{{item.titulo}}</h5>
 
                         <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
-
-                        <p>
-                         </p>
 
                         <hr>
 
                         <img src="{{item.imagem}}" alt="Foto"
                           class="col-md-12 d-flex justify-content-center mb-4">
-
-              
 
                       </div>
                     </div>
@@ -202,32 +198,31 @@
                   <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
                     *ngFor='let item of tema.postagem | orderBy: key: reverse'>
 
-                    <div class="col-md-12 d-flex justify-content-start p-3">
+                    <div class="row d-flex align-items-center">
+                      <div class="col-md-2 pr-0 d-flex justify-content-center">
 
-                      <img src="{{item.usuario.foto}}" alt="Foto do usuário" width="50px" height="50px"
-                        class="card-foto mr-2">
+                        <img src="{{foto}}" alt="Foto do usuário" width="50px" height="50px"
+                      class="card-foto mr-2">
 
-                      <div>
-                        <p class="mt-2 font-weight-bold text-white fs-16">{{item.usuario.nome}}</p>
                       </div>
 
-                    </div>
+                      <div class="col-md-6 pl-0">
+                        <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{nome}}</p>
+                          <small class="text-light">
+                          {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
+                      </div>
+                    </div>  
 
                     <div>
-                      <p class="text-center">Tema: {{tema.nome}}</p>
+                      <h5 class="text-center text-light">Tema: {{tema.nome}}</h5>
                     </div>
 
                     <div class="container">
                       <div class="row d-flex justify-content-center">
 
-                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12">{{item.titulo}}</h5>
+                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12 text-light">{{item.titulo}}</h5>
 
                         <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
-
-                        <p>
-                          <small>
-                            {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
-
                         <hr>
 
                         <img src="{{item.imagem}}" alt="Foto"
@@ -256,33 +251,33 @@
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Nova postagem</h5>
+      <div class="modal-header cor-marrom-back">
+        <h5 class="modal-title text-light" id="TituloModalCentralizado">Nova postagem</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body cor-marrom-claro">
 
         <div class="form-group">
-          <label for="titulo">Título</label>
+          <label for="titulo" class="text-light font-weight-bold">Título</label>
           <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
             placeholder="Digite o título">
         </div>
 
         <div class="form-group">
-          <label for="texto">Texto</label>
+          <label for="texto" class="text-light font-weight-bold">Texto</label>
           <textarea [(ngModel)]="postagem.texto" name="texto" id="texto" rows="3" class="form-control"></textarea>
         </div>
 
         <div class="form-group">
-          <label for="titulo">Imagem</label>
+          <label for="imagem" class="text-light font-weight-bold">Imagem</label>
           <input [(ngModel)]="postagem.imagem" type="text" class="form-control" id="imagem"
-            placeholder="Digite o título">
+            placeholder="Coloque o link da sua imagem">
         </div>
 
         <div class="form-group">
-          <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>:</label>
+          <label for="tema" class="text-light font-weight-bold">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema" class="cor-marrom font-weight-bold">cadastre um novo</a>:</label>
           <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">
             <option *ngFor="let tema of listaTemas" value="{{tema.id}}">{{tema.descricao}}
             </option>
@@ -290,9 +285,9 @@
         </div>
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="publicar()">Publicar</button>
+      <div class="modal-footer cor-marrom-back">
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal" (click)="publicar()">Publicar</button>
       </div>
     </div>
   </div>

@@ -28,6 +28,10 @@
   font-size: 16pt;
 }
 
+.fs-20 {
+  font-size: 20px;
+}
+
 .btn {
     animation: bg 10s infinite;
     animation-timing-function: linear
