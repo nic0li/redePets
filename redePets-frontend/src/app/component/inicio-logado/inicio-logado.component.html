@@ -10,13 +10,11 @@
           </div>
 
           <div class="col-md-6 text-center">
-            <h1 class="display-4 txt-marrom mb-5">Rede Pets</h1>
-            <p>A Rede Pets é uma plataforma que visa conectar pessoas que desejam adotar pets com outras
-              que possuem pets disponíveis para adoção.
+            <h1 class="display-4 txt-marrom mb-5">Conecte-se!</h1>
+            <p>Busque aqui seu novo amigo pet ou anuncie o futuro novo amigo pet de outra pessoa! :)
             </p>
-            <button type="submit" class="btn btn-outline-dark mr-4" routerLink='/tema'>Temas</button>
-            <button type="submit" class="btn btn-outline-dark" data-toggle="modal" data-target="#nova-postagem">Nova
-              Postagem</button>
+            <button type="submit" class="btn btn-outline-dark mr-4" data-toggle="modal" data-target="#nova-postagem">Nova Postagem</button>
+            <button type="submit" class="btn btn-outline-dark" routerLink='/tema'>Temas</button>
           </div>
 
         </div>
@@ -28,26 +26,28 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <div class="container mt-5">
 
+    <div class="col-md-4">
+
+      <div class="container mt-5">
         <div class="row w-100">
+
           <div class="col-md-4">
             <div class="card border-0 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
               <div class="d-flex justify-content-center">
-                <img class="card-img-top w-100" src="{{foto}}" alt="Imagem de capa do card">
+                <img class="card-img-top w-100" src="{{foto}}" alt="">
               </div>
-
               <div class="card-body cor-marrom-claro">
                 <h5 class="card-title text-center font-weight-bold text-light">{{nome}}</h5>
-                <p class="card-text text-center font-italic text-light">Quero: {{tipo}}</p>
+                <p class="card-text text-center font-italic text-light">{{tipo}}</p>
+                <!--<a [routerLink]="['/usuario/edit', id]">
+                  <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                </a>-->
               </div>
-
             </div>
           </div>
 
         </div>
-
       </div>
 
     </div>
@@ -55,6 +55,7 @@
     <div class="col-md-8">
 
       <div class="container mt-5 mb-5" id="postagens">
+
         <nav>
           <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
@@ -67,99 +68,31 @@
               aria-controls="minhasPostagens" aria-selected="false">Minhas Postagens</a>
 
             <a class="nav-item nav-link text-secondary font-weight-bold" id="postagensTema-tab" data-toggle="tab"
-              href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por
-              Tema</a>
+              href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por Tema</a>
 
           </div>
         </nav>
 
         <div class="tab-content mt-5" id="nav-tabContent">
 
-
-          <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
-            aria-labelledby="todasPostagens-tab">
+          <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
 
             <div class="row d-flex justify-content-center">
-
               <div class="col-md-10">
 
                 <div class="row mt-5">
                   <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
-                    *ngFor='let item of listaPostagens | orderBy: key: reverse'>
+                  *ngFor='let item of listaPostagens | orderBy: key: reverse'>
 
                     <div class="row d-flex align-items-center">
                       <div class="col-md-2 pr-0 d-flex justify-content-center">
-
-                        <img src="{{foto}}" alt="Foto do usuário" width="50px" height="50px"
-                      class="card-foto mr-2">
-
+                        <img src="{{item.usuario.foto}}" alt="" width="50px" height="50px" class="card-foto mr-2">
                       </div>
-
                       <div class="col-md-6 pl-0">
-                        <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{nome}}</p>
-                          <small class="text-light">
+                        <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{item.usuario.nome}}</p>
+                        <small class="text-light">
                           {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
                       </div>
-                    </div>  
-
-                    <div>
-                      <h5 class="text-center text-light">Eu estou: {{item.tema.nome}}</h5>
-                    </div>
-
-                    <div class="container">
-                      <div class="row d-flex justify-content-center">
-
-                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12 text-light">{{item.titulo}}</h5>
-
-                        <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
-
-                    
-                        <hr>
-
-                        <img src="{{item.imagem}}" alt="Foto"
-                          class="col-md-12 d-flex justify-content-center mb-4">
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
-
-            <div class="row d-flex justify-content-center">
-
-              <div class="col-md-10">
-
-                <div class="row mt-5">
-                  <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
-                    *ngFor='let item of usuario.postagem | orderBy: key: reverse'>
-
-                    <div class="row d-flex align-items-center">
-                        <div class="col-md-2 pr-0 d-flex justify-content-center">
-
-                          <img src="{{foto}}" alt="Foto do usuário" width="50px" height="50px"
-                        class="card-foto mr-2">
-
-                        </div>
-
-                        <div class="col-md-6 pl-0">
-                          <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{nome}}</p>
-                            <small class="text-light">
-                            {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
-                        </div>
-
-                        <div class="col-md-4 d-flex justify-content-end">
-
-                          <a class="text-light mr-3"
-                          [routerLink]="['/postagem/edit',item.id]"><i class="fa fa-pencil-square-o fs-20" aria-hidden="true"></i></a>
-
-                        <a class="text-light"
-                          [routerLink]="['/postagem/delete',item.id]"><i class="fa fa-trash-o fs-20" aria-hidden="true"></i></a>
-                        </div>
-
                     </div>
 
                     <div>
@@ -168,30 +101,73 @@
 
                     <div class="container">
                       <div class="row d-flex justify-content-center">
-
                         <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12 text-light">{{item.titulo}}</h5>
-
                         <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
-
                         <hr>
-
-                        <img src="{{item.imagem}}" alt="Foto"
-                          class="col-md-12 d-flex justify-content-center mb-4">
-
+                        <img src="{{item.imagem}}" alt="" class="col-md-12 d-flex justify-content-center mb-4">
                       </div>
                     </div>
+
                   </div>
                 </div>
+
               </div>
             </div>
 
           </div>
 
+          <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
+
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-10">
+
+                <div class="row mt-5">
+                  <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3"
+                    *ngFor='let item of usuario.postagem | orderBy: key: reverse'>
+
+                    <div class="row d-flex align-items-center">
+                      <div class="col-md-2 pr-0 d-flex justify-content-center">
+                        <img src="{{foto}}" alt="" width="50px" height="50px" class="card-foto mr-2">
+                      </div>
+                      <div class="col-md-6 pl-0">
+                        <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{nome}}</p>
+                        <small class="text-light">
+                          {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
+                      </div>
+                      <div class="col-md-4 d-flex justify-content-end">
+                        <a class="text-light mr-3" [routerLink]="['/postagem/edit',item.id]">
+                          <i class="fa fa-pencil-square-o fs-20" aria-hidden="true"></i>
+                        </a>
+                        <a class="text-light" [routerLink]="['/postagem/delete',item.id]">
+                          <i class="fa fa-trash-o fs-20" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h5 class="text-center text-light">Tema: {{item.tema.nome}}</h5>
+                    </div>
+
+                    <div class="container">
+                      <div class="row d-flex justify-content-center">
+                        <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12 text-light">{{item.titulo}}</h5>
+                        <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
+                        <hr>
+                        <img src="{{item.imagem}}" alt="" class="col-md-12 d-flex justify-content-center mb-4">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
 
           <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
 
             <div class="row d-flex justify-content-center">
-
               <div class="col-md-10">
 
                 <div class="row mt-5" *ngFor='let tema of listaTemas'>
@@ -200,18 +176,14 @@
 
                     <div class="row d-flex align-items-center">
                       <div class="col-md-2 pr-0 d-flex justify-content-center">
-
-                        <img src="{{foto}}" alt="Foto do usuário" width="50px" height="50px"
-                      class="card-foto mr-2">
-
+                        <img src="{{item.usuario.foto}}" alt="" width="50px" height="50px" class="card-foto mr-2">
                       </div>
-
                       <div class="col-md-6 pl-0">
-                        <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{nome}}</p>
-                          <small class="text-light">
+                        <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{item.usuario.nome}}</p>
+                        <small class="text-light">
                           {{item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
                       </div>
-                    </div>  
+                    </div>
 
                     <div>
                       <h5 class="text-center text-light">Tema: {{tema.nome}}</h5>
@@ -219,21 +191,19 @@
 
                     <div class="container">
                       <div class="row d-flex justify-content-center">
-
                         <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12 text-light">{{item.titulo}}</h5>
-
                         <p class="font-monospace card-publicacao mb-3 col-md-12">{{item.texto}}</p>
                         <hr>
-
-                        <img src="{{item.imagem}}" alt="Foto"
-                          class="col-md-12 d-flex justify-content-center mb-4">
-
+                        <img src="{{item.imagem}}" alt="" class="col-md-12 d-flex justify-content-center mb-4">
                       </div>
                     </div>
+
                   </div>
                 </div>
+
               </div>
             </div>
+
           </div>
 
         </div>
@@ -243,8 +213,6 @@
 
   </div>
 </div>
-
-
 
 <!-- MODAL DE PUBLICAR POSTAGEM -->
 <div class="modal fade" id="nova-postagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
@@ -277,16 +245,17 @@
         </div>
 
         <div class="form-group">
-          <label for="tema" class="text-light font-weight-bold">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema" class="cor-marrom font-weight-bold">cadastre um novo</a>:</label>
+          <label for="tema" class="text-light font-weight-bold">Escolha um tema ou <a data-dismiss="modal"
+              routerLink="/tema" class="cor-marrom font-weight-bold">cadastre um novo</a>:</label>
           <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">
-            <option *ngFor="let tema of listaTemas" value="{{tema.id}}">{{tema.descricao}}
+            <option *ngFor="let tema of listaTemas" value="{{tema.id}}">{{tema.nome}}
             </option>
           </select>
         </div>
 
       </div>
       <div class="modal-footer cor-marrom-back">
-        <button type="button" class="btn btn-outline-light" data-dismiss="modal"routerLink="/inicio">Cancelar</button>
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal" routerLink="/inicio">Cancelar</button>
         <button type="button" class="btn btn-outline-light" data-dismiss="modal" (click)="publicar()">Publicar</button>
       </div>
     </div>

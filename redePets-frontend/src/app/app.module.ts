@@ -19,6 +19,7 @@ import { PostagemDeleteComponent } from './component/delete/postagem-delete/post
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
 import { AlertasComponent } from './component/alertas/alertas.component';
+import { UsuarioEditComponent } from './component/edit/usuario-edit/usuario-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { AlertasComponent } from './component/alertas/alertas.component';
     TemaEditComponent,
     PostagemEditComponent,
     PostagemDeleteComponent,
-    AlertasComponent
+    AlertasComponent,
+    UsuarioEditComponent
   ],
   imports: [
     HttpClientModule,

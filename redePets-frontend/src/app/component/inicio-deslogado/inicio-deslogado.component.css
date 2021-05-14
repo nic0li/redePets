@@ -1,5 +1,15 @@
-.icons-size{
+.icons-size {
   font-size: 30px;
 }
 
+.fa-linkedin-square,
+.fa-github-square
+ {
+   color: #312227;
+ }
 
+ .fa-linkedin-square:hover,
+ .fa-github-square:hover
+ {
+   color: #931D33;
+ }

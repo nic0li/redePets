@@ -24,7 +24,10 @@ export class CadastrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0);
-    this.limpar();
+
+    setTimeout(() => {
+      this.limpar();
+    });
   }
 
   confirmarSenha(event: any){
