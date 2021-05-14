@@ -16,7 +16,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class InicioLogadoComponent implements OnInit {
 
-  //id = environment.id;
+  id = environment.id;
   nome = environment.nome;
   foto = environment.foto;
   tipo = environment.tipo;

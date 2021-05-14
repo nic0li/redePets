@@ -13,6 +13,7 @@ export class MenuComponent implements OnInit {
   id = environment.id;
   nome = environment.nome;
   foto = environment.foto;
+  tipo = environment.tipo;
 
   constructor(
     private router: Router,
@@ -31,6 +32,7 @@ export class MenuComponent implements OnInit {
     environment.nome = '';
     environment.foto = '';
     environment.id = 0;
+    environment.tipo = '';
   }
 
 }

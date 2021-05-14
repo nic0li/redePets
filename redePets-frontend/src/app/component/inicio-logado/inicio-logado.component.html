@@ -39,10 +39,10 @@
               </div>
               <div class="card-body cor-marrom-claro">
                 <h5 class="card-title text-center font-weight-bold text-light">{{nome}}</h5>
-                <p class="card-text text-center font-italic text-light">{{tipo}}</p>
-                <!--<a [routerLink]="['/usuario/edit', id]">
-                  <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
-                </a>-->
+                <p class="card-text text-center font-italic text-light">Quero {{tipo}}</p>
+                <a [routerLink]="['/usuario/edit', id]">
+                  <p class="text-white fs-30 m-0 text-center"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                </a>
               </div>
             </div>
           </div>
@@ -76,6 +76,14 @@
         <div class="tab-content mt-5" id="nav-tabContent">
 
           <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
+
+            <div class="row d-flex justify-content-center mt-5 mb-5">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="tituloPostagem" placeholder="Busque por título" [(ngModel)]="tituloPostagem" (keyup)="findByTituloPostagem()">
+                </div>
+              </div>
+            </div>
 
             <div class="row d-flex justify-content-center">
               <div class="col-md-10">
@@ -136,10 +144,10 @@
                       </div>
                       <div class="col-md-4 d-flex justify-content-end">
                         <a class="text-light mr-3" [routerLink]="['/postagem/edit',item.id]">
-                          <i class="fa fa-pencil-square-o fs-20" aria-hidden="true"></i>
+                          <i class="fa fa-pencil-square-o fs-30" aria-hidden="true"></i>
                         </a>
                         <a class="text-light" [routerLink]="['/postagem/delete',item.id]">
-                          <i class="fa fa-trash-o fs-20" aria-hidden="true"></i>
+                          <i class="fa fa-trash-o fs-30" aria-hidden="true"></i>
                         </a>
                       </div>
                     </div>
@@ -166,6 +174,14 @@
           </div>
 
           <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
+
+            <div class="row d-flex justify-content-center mt-5 mb-5">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="nomeTema" placeholder="Busque por tema" [(ngModel)]="nomeTema" (keyup)="findByNomeTema()">
+                </div>
+              </div>
+            </div>
 
             <div class="row d-flex justify-content-center">
               <div class="col-md-10">

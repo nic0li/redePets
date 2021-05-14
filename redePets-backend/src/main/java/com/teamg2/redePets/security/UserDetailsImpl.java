@@ -1,6 +1,7 @@
 package com.teamg2.redePets.security;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +14,7 @@ public class UserDetailsImpl implements UserDetails {
 	
 	private String email;
 	private String password;
+	private List<GrantedAuthority> authorities;
 	
 	public UserDetailsImpl (Usuario user) {
 		super();
@@ -26,7 +28,7 @@ public class UserDetailsImpl implements UserDetails {
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+		return authorities;
 	}
 
 	@Override
