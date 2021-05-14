@@ -1,27 +1,27 @@
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5 card-publicacao">
 
   <div class="row mb-5">
     <div class="col-md-12">
-      <h1 class="text-center text-secondary">Apagar tema</h1>
+      <h1 class="text-center ">Apagar tema</h1>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class="col-md-12">
-      <h4 class="text-center text-secondary">Você tem certeza de que deseja apagar este tema? Todas as postagens relacionadas a ele também serão apagadas!</h4>
+      <h4 class="text-center ">Você tem certeza de que deseja apagar este tema? Todas as postagens relacionadas a ele também serão apagadas!</h4>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class="col-md-12">
-      <h5 class="text-center text-info">Tema: {{tema.nome}}</h5>
+      <h5 class="text-center cor-marrom font-weight-bold">Tema: {{tema.nome}}</h5>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-12 d-flex justify-content-center">
-      <button class="btn btn-danger mr-3" routerLink="/tema">Não</button>
-      <button class="btn btn-success" (click)="apagar()">Sim</button>
+      <button class="btn btn-outline-dark mr-3" routerLink="/tema">Não</button>
+      <button class="btn btn-outline-dark" (click)="apagar()">Sim</button>
     </div>
   </div>
 

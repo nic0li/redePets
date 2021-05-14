@@ -1,0 +1,12 @@
+.card-postagem {
+    box-shadow: 1px 1px 5px #A27E6E;
+    background-color: #A27E6E;
+    padding: 20px;
+    border-radius: 20px;
+    width: 600px;
+  }
+  .card-publicacao {
+    background-color: #E0C1AD;
+    border-radius: 0px;
+    padding: 10px;
+  }

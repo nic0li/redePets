@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-postagem-delete',
@@ -11,6 +12,10 @@ import { PostagemService } from 'src/app/service/postagem.service';
 })
 export class PostagemDeleteComponent implements OnInit {
 
+  
+  nome = environment.nome;
+  foto = environment.foto;
+  tipo = environment.tipo;
   postagem:Postagem = new Postagem();
   idPost:number;
 

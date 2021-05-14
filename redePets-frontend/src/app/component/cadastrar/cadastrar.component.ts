@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-cadastrar',
@@ -23,6 +24,7 @@ export class CadastrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0);
+    this.limpar();
   }
 
   confirmarSenha(event: any){
@@ -46,6 +48,14 @@ export class CadastrarComponent implements OnInit {
         this.alertas.showAlertSuccess("Usuário cadastrado com sucesso!");
       })
     }
+  }
+
+  limpar() {
+    localStorage.removeItem("token");
+    environment.id = 0;
+    environment.nome = "";
+    environment.foto = "";
+    environment.tipo = "";
   }
 
 }

@@ -17,4 +17,5 @@ export class InicioDeslogadoComponent implements OnInit {
 
   }
 
+  
 }

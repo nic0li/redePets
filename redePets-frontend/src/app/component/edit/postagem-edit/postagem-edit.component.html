@@ -1,10 +1,10 @@
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5 card-publicacao">
 
  <div class="row">
 
  <div class="col-md-12">
-
-    <h1 class="text-center text-secondary">Atualizar Postagem</h1>
+<br>
+    <h1 class="text-center ">Atualizar Postagem</h1>
 </div>
 </div>
 <div class="row d-flex justify-content-center">
@@ -21,19 +21,26 @@
                 </div>
 
                 <div class="form-group">
-                <label for="texto">Escolha um tema ou  <a data-dismiss="modal" routerLink="/tema">Cadastre um novo</a>:</label>
-                <select class="form-control" name="tema" id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
-                <option *ngFor='let item of listaTemas'value="{{item.id}}">{{item.nome}}</option>
-                </select>
-                </div>
+                    <label for="imagem" >Imagem</label>
+                    <input [(ngModel)]="postagem.imagem" type="text" class="form-control" id="imagem"
+                      placeholder="Coloque o link da sua imagem">
+                  </div>
 
-                <div class="d-flex justify-content-center">
-                    <button class="btn btn-danger mr-4" routerLink="/inicio">Cancelar</button>
-                    <button class="btn btn-info" (click)="atualizar()">Atualizar</button>
+                  <div class="form-group">
+                    <label for="tema" >Escolha um tema ou <a data-dismiss="modal" routerLink="/tema" class="cor-marrom font-weight-bold">cadastre um novo</a>:</label>
+                    <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">
+                      <option *ngFor="let tema of listaTemas" value="{{tema.id}}">{{tema.descricao}}
+                      </option>
+                    </select>
+                  </div>
+
+                <div class="d-flex justify-content-center mt-4 ">
+                    <button class="btn btn-outline-dark mr-4" routerLink="/inicio">Cancelar</button>
+                    <button class="btn btn-outline-dark" (click)="atualizar()">Atualizar</button>
 
                 </div>
 
     </div>
 </div>
-
+<br>
 </div>
