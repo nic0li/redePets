@@ -23,7 +23,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	@Bean 
-	public PasswordEncoder passawordEncoder() {
+	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder(); 
 	}
 	
@@ -32,8 +32,9 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 		.antMatchers("/usuarios/entrar").permitAll()
 		.antMatchers("/usuarios/cadastrar").permitAll()
-		.antMatchers("/tema").permitAll()
-        .antMatchers("/tema/{id}").permitAll()
+		.antMatchers("/**").permitAll()
+		.antMatchers("/temas").permitAll()
+        .antMatchers("/temas/{id}").permitAll()
         .antMatchers("/postagens").permitAll()
         .antMatchers("/postagens/{id}").permitAll()
         .antMatchers("/usuarios").permitAll()

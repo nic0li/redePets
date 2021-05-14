@@ -12,9 +12,7 @@
 	<artifactId>redePets</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>redePets</name>
-	<description>Projeto integrador da equipe 2 da turma 18 da Generation Brasil, 
-	cujo tema é uma rede social que conecta pessoas que desejam adotar pets 
-	com pessoas que possuem pets disponíveis para adoção.</description>
+	<description>Projeto integrador da equipe 2 da turma 18 da Generation Brasil, cujo tema é uma rede social que conecta pessoas que desejam adotar pets com pessoas que possuem pets disponíveis para adoção.</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -40,7 +38,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -52,6 +49,13 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!--
+		<dependency>
+		   <groupId>org.postgresql</groupId>
+		   <artifactId>postgresql</artifactId>
+		   <version>42.2.12</version>
+		</dependency>
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

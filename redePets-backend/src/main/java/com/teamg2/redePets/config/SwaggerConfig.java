@@ -29,7 +29,7 @@ public class SwaggerConfig {
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 		.title("Rede Pets")
-		.description("API do Projeto Integrador de equipe 2 da turma 18 do curso Generation Brasil")
+		.description("API do Projeto Integrador da equipe 2 da turma 18 do curso Generation Brasil")
 		.version("1.0")
 		.contact(contact())
 		.build();
