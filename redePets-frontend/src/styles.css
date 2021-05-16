@@ -25,43 +25,39 @@ h1, h2, h3, h4, h5 {
 }
 
 .cor-marrom {
-  color: #312227;
-}
-
-.cor-marrom-back {
   background-color: #312227;
-}
-
-.cor-bege {
-  background-color: #E0C1AD;
-}
-
-.cor-marrom-claro {
-  background-color: #A27E6E;
-}
-
-.cor-laranja {
-  background-color: #CA6536;
-}
-
-.cor-vinho {
-  background-color: #931D33;
 }
 
 .txt-marrom {
   color: #312227;
 }
 
-.txt-bege {
-  color: #E0C1AD;
+.cor-marrom-claro {
+  background-color: #A27E6E;
 }
 
 .txt-marrom-claro {
   color: #A27E6E;
 }
 
+.cor-bege {
+  background-color: #E0C1AD;
+}
+
+.txt-bege {
+  color: #E0C1AD;
+}
+
+.cor-laranja {
+  background-color: #CA6536;
+}
+
 .txt-laranja {
   color: #CA6536;
+}
+
+.cor-vinho {
+  background-color: #931D33;
 }
 
 .txt-vinho {
@@ -70,4 +66,12 @@ h1, h2, h3, h4, h5 {
 
 .txt-branco {
   color: white;
+}
+
+.fs-16 {
+  font-size: 16pt;
+}
+
+.fs-30 {
+  font-size: 30px;
 }

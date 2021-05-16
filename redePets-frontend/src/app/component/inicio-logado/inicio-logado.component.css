@@ -1,55 +1,36 @@
 .card {
   box-shadow: 1px 1px 5px #E0C1AD;
   background-color: #E0C1AD;
-  padding: 20px;
-  border-radius: 0px;
+  width: 100%;
 }
 
-.card-postagem {
-  box-shadow: 1px 1px 5px #A27E6E;
+.card-header {
   background-color: #A27E6E;
-  padding: 20px;
-  border-radius: 20px;
-  width: 600px;
 }
 
 .card-foto {
-  border-radius: 50%;
-}
-
-.card-publicacao {
-  background-color: #E0C1AD;
-  border-radius: 0px;  
-  padding: 10px;
-}
-
-
-.fs-16 {
-  font-size: 16pt;
-}
-
-.fs-30 {
-  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
 }
 
 .btn {
-    animation: bg 10s infinite;
-    animation-timing-function: linear
-
+  animation: bg 10s infinite;
+  animation-timing-function: linear;
 }
 
 .card-img-top {
-    -webkit-transition: all 1s ease; /* Safari and Chrome */
-    -moz-transition: all 1s ease; /* Firefox */
-    -ms-transition: all 1s ease; /* IE 9 */
-    -o-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;
+  -webkit-transition: all 1s ease; /* Safari and Chrome */
+  -moz-transition: all 1s ease; /* Firefox */
+  -ms-transition: all 1s ease; /* IE 9 */
+  -o-transition: all 1s ease; /* Opera */
+  transition: all 1s ease;
 }
 
 .card-img-top:hover {
-    -webkit-transform:scale(1.15); /* Safari and Chrome */
-    -moz-transform:scale(1.15); /* Firefox */
-    -ms-transform:scale(1.15); /* IE 9 */
-    -o-transform:scale(1.15); /* Opera */
-     transform:scale(1.15);
+  -webkit-transform:scale(1.15); /* Safari and Chrome */
+  -moz-transform:scale(1.15); /* Firefox */
+  -ms-transform:scale(1.15); /* IE 9 */
+  -o-transform:scale(1.15); /* Opera */
+  transform:scale(1.15);
 }

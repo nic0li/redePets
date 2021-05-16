@@ -1,13 +1,11 @@
-<div class="container mt-5 mb-5">
-
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="text-center text-secondary">Atualizar meu usuário</h1>
-    </div>
-  </div>
-
+<div class="container-fluid p-5">
   <div class="row d-flex justify-content-center">
-    <div class="col-md-10">
+    <div class="col-md-6">
+      <form class="card p-4 form-group" action="">
+
+        <div class="card-top">
+          <h1 class="text-center txt-marrom">Atualizar cadastro</h1>
+        </div>
 
         <div class="form-group">
           <label for="nome">Nome</label>
@@ -16,18 +14,17 @@
 
         <div class="form-group">
           <label for="email">E-mail</label>
-          <input [(ngModel)]="usuario.email" class="form-control" type="email" name="email" id="email"
-            placeholder="Insira seu e-mail">
+          <input [(ngModel)]="usuario.email" class="form-control" type="email" name="email" id="email" placeholder="Insira seu e-mail">
         </div>
 
         <div class="form-group">
           <label for="senha">Senha</label>
           <input (input)="confirmarSenha($event)" class="form-control" type="password" name="senha" id="senha"
-            placeholder="Insira sua senha">
+            placeholder="Insira novamente sua senha">
         </div>
 
         <div class="form-group">
-          <label for="confirmeSenha">Confirme Senha</label>
+          <label for="confirmeSenha">Confirme senha</label>
           <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmeSenha"
             id="confirmeSenha" placeholder="Confirme sua senha">
         </div>
@@ -39,9 +36,9 @@
         </div>
 
         <div class="form-group">
-          <label for="tipo">Tipo de Usuário</label>
+          <label for="tipo">Tipo de usuário</label>
           <select (change)="tipoUsuario($event)" class="form-control" name="tipo" id="tipo">
-              <option>Selecione seu tipo de Usuário:</option>
+              <option>Selecione seu tipo de usuário:</option>
               <option value="adotar">Quero adotar</option>
               <option value="doar">Quero doar</option>
           </select>
@@ -52,6 +49,7 @@
         <button type="submit" class="btn btn btn-outline-dark" routerLink="/inicio">Cancelar</button>
       </div>
 
+      </form>
     </div>
   </div>
 

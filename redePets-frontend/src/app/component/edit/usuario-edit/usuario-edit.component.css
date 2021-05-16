@@ -1,0 +1,9 @@
+.container-fluid {
+  background-color: #E0C1AD;
+}
+
+.card {
+  box-shadow: 1px 1px 5px #A27E6E;
+  background-color: #A27E6E;
+  border-radius: 5px;
+}

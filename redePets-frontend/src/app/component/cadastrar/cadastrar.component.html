@@ -1,8 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid p-5">
   <div class="row d-flex justify-content-center">
-
-    <div class="col-md-12 mt-5 mb-5">
-      <form class="form card" action="">
+    <div class="col-md-4">
+      <form class="card p-4 form-group" action="">
 
         <div class="card-top">
           <h1 class="text-center txt-marrom">Cadastrar</h1>
@@ -11,14 +10,12 @@
 
         <div class="form-group">
           <label for="nome">Nome</label>
-          <input [(ngModel)]="usuario.nome" class="form-control" type="text" name="nome" id="nome"
-            placeholder="Insira seu nome">
+          <input [(ngModel)]="usuario.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Insira seu nome">
         </div>
 
         <div class="form-group">
           <label for="email">E-mail</label>
-          <input [(ngModel)]="usuario.email" class="form-control" type="email" name="email" id="email"
-            placeholder="Insira seu e-mail">
+          <input [(ngModel)]="usuario.email" class="form-control" type="email" name="email" id="email" placeholder="Insira seu e-mail">
         </div>
 
         <div class="form-group">
@@ -28,7 +25,7 @@
         </div>
 
         <div class="form-group">
-          <label for="confirmeSenha">Confirme Senha</label>
+          <label for="confirmeSenha">Confirme senha</label>
           <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmeSenha"
             id="confirmeSenha" placeholder="Confirme sua senha">
         </div>
@@ -40,9 +37,9 @@
         </div>
 
         <div class="form-group">
-          <label for="tipo">Tipo de Usuário</label>
+          <label for="tipo">Tipo de usuário</label>
           <select (change)="tipoUsuario($event)" class="form-control" name="tipo" id="tipo">
-              <option>Selecione seu tipo de Usuário:</option>
+              <option>Selecione seu tipo de usuário:</option>
               <option value="adotar">Quero adotar</option>
               <option value="doar">Quero doar</option>
           </select>
@@ -56,5 +53,4 @@
       </form>
     </div>
   </div>
-
 </div>

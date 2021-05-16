@@ -1,66 +1,54 @@
-<div class="container mb-5 mt-5 card-publicacao">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center ">Apagar postagem</h1>
-        </div>
-    </div>
+<div class="container mt-2 mb-4 p-2">
 
-<div class="row">
+  <div class="row">
     <div class="col-md-12">
-        <h4 class="text-center ">Você realmente deseja apagar a Postagem?</h4>
+      <h1 class="text-center">Apagar postagem</h1>
     </div>
-</div>
-<div class="row d-flex justify-content-center">
+  </div>
 
-    <div class="col-md-6">
+  <div class="row mb-2">
+    <div class="col-md-12">
+      <h4 class="text-center">Você realmente deseja apagar a Postagem?</h4>
+    </div>
+  </div>
 
-      <div class="row mt-5">
-        <div class="card-postagem shadow-lg p-3 mb-5 bg-body rounded mt-3 mb-3">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-8">
+      <div class="card mt-4 mb-4">
 
-          <div class="row d-flex align-items-center">
-              <div class="col-md-2 pr-0 d-flex justify-content-center">
-
-                <img src="{{foto}}" alt="" width="50px" height="50px"
-              class="card-foto mr-2">
-
-              </div>
-
-              <div class="col-md-6 pl-0">
-                <p class="mt-2 font-weight-bold text-white fs-16 mb-0">{{nome}}</p>
-                  <small class="text-light">
-                  {{postagem.data | date:'dd/MM/yyyy'}} às {{postagem.data | date:'HH:mm'}}</small>
-              </div>
-
-          </div>
-
-          <div>
-            <h5 class="text-center text-light">Tema: {{postagem.tema.nome}}</h5>
-          </div>
-
-          <div class="container">
-            <div class="row d-flex justify-content-center">
-
-              <h5 class="font-monospace mt-1 mb-2 fs-16 col-md-12 text-light">{{postagem.titulo}}</h5>
-
-              <p class="font-monospace card-publicacao mb-3 col-md-12">{{postagem.texto}}</p>
-
-              <hr>
-
-              <img src="{{postagem.imagem}}" alt=""
-                class="col-md-12 d-flex justify-content-center mb-4">
-
+        <div class="card-header text-light">
+          <div class="row d-flex justify-content-start m-3">
+            <div class="col-md-1 d-flex justify-content-center">
+              <img class="card-foto" src="{{foto}}" alt="">
+            </div>
+            <div class="col-md-7">
+              <p class="font-weight-bold fs-16 mb-0">{{nome}}</p>
+              <small class="">{{postagem.data | date:'dd/MM/yyyy'}} às {{postagem.data | date:'HH:mm'}}</small>
             </div>
           </div>
         </div>
+
+        <div class="card-body mb-2">
+          <div class="row m-2">
+            <h5 class="col-md-12 text-center">Tema: {{postagem.tema.nome}}</h5>
+            <h5 class="col-md-12 mt-3 mb-3 fs-16">{{postagem.titulo}}</h5>
+            <p class="col-md-12">{{postagem.texto}}</p>
+            <hr>
+          </div>
+          <div class="row d-flex justify-content-center m-2">
+            <img class="col-md-12 w-100" src="{{postagem.imagem}}" alt="">
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 
-<div class="row mt-5">
+  <div class="row">
     <div class="col-md-12 d-flex justify-content-center">
-        <button class="btn btn-outline-dark mr-4" routerLink='/inicio'>Não</button>
-        <button class="btn btn-outline-dark" (click)="apagar()">Sim</button>
+      <button class="btn btn-outline-dark mr-4" routerLink='/inicio'>Não</button>
+      <button class="btn btn-outline-dark" (click)="apagar()">Sim</button>
     </div>
-</div>
+  </div>
 
 </div>
